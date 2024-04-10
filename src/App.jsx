@@ -4,6 +4,7 @@ import Pantry from './pages/Pantry'
 import Explore from './pages/Explore'
 import QuickBites from './pages/QuickBites'
 import Restaurant from './pages/Restaurant'
+import Cart from './pages/Cart'
 function App() {
 
   return (
@@ -15,9 +16,9 @@ function App() {
               example in Pantry page*/}
         <Routes>
           <Route path="/" element={<Pantry />} />
-          <Route path="/Explore" element={<Explore />} />
-          <Route path="/QuickBites" element={<QuickBites />} />
-          <Route path="/Restaurant" element={<Restaurant />} />
+          <Route path="/explore" element={<Explore />} />
+          <Route path="/quickbites" element={<QuickBites />} />
+          <Route path="/restaurant" element={<Restaurant />} />
         </Routes>
     </Router>
     </>

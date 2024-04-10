@@ -1,8 +1,14 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 const Explore = () => {
   return (
-    <div>Explore</div>
+    <div>
+      <Link to="/">
+        Pantry
+      </Link>
+      <div>Explore</div>
+    </div>
+    
   )
 }
 
