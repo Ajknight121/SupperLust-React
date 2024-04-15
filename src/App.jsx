@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Pantry from './pages/Pantry'
 import Explore from './pages/Explore'
 import QuickBites from './pages/QuickBites'
-import Restaurant from './pages/Restaurant'
+import Restaurant from './pages/Restaurant/Restaurant'
 import Cart from './pages/Cart'
 function App() {
 
