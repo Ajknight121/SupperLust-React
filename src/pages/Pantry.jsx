@@ -20,6 +20,9 @@ const Pantry = () => {
             <Link to="/cart">
                 Checkout View
             </Link>
+            <Link to="/panel">
+                Panel
+            </Link>
         </div>
         <div>Pantry</div>
     </div>

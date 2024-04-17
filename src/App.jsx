@@ -5,6 +5,7 @@ import Explore from './pages/explore/Explore'
 import QuickBites from './pages/QuickBites'
 import Restaurant from './pages/Restaurant'
 import Cart from './pages/Cart'
+import PanelPopup from './RatingPanel'
 function App() {
 
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/quickbites" element={<QuickBites />} />
           <Route path="/restaurant" element={<Restaurant />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/panel" element={<PanelPopup />} />
         </Routes>
     </Router>
     </div>

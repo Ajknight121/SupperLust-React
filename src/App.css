@@ -20,3 +20,30 @@ nav {
   padding: 0 5px;
   height: 20px;
 }
+
+.panel {
+  width: 90%;
+}
+
+.submit-rating {
+  border: 1px solid #7C7979;
+  background: rgba(55, 196, 97, 0.66);
+  margin: 30px;
+}
+
+.ratings-panel {
+  background: rgba(138, 205, 238, 0.78);
+  color: black;
+  font-size: large;
+}
+
+.ratings-panel > h1 {
+  margin-top: 0;
+}
+
+.exit {
+  font-size: x-large;
+  font-weight: bolder;
+  padding-right: 20px;
+  text-align: right;
+}
