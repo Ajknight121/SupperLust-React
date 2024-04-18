@@ -23,7 +23,7 @@ h2 {
   padding: 20px;
   border-radius: 4px;
   width: 40%;
-  min-width: 400px;
+  min-width: fit-content;
   
 }
 .menu-group-container {
