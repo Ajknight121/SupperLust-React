@@ -4,7 +4,7 @@ import Pantry from './pages/Pantry'
 import Explore from './pages/explore/Explore'
 import QuickBites from './pages/QuickBites'
 import Restaurant from './pages/Restaurant/Restaurant'
-import Cart from './pages/Cart'
+import Cart from './pages/cart/Cart'
 import PanelPopup from './RatingPanel'
 function App() {
 
