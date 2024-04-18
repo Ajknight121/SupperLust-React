@@ -1,42 +1,49 @@
 #root {
-  max-width: 1280px;
+  min-width: 270px;
+  width: 100%;
+  max-width: 400px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+nav {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  margin: auto;
+  justify-content: space-between;
+  padding: 0 5px;
+  height: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.panel {
+  width: 90%;
 }
 
-.card {
-  padding: 2em;
+.submit-rating {
+  border: 1px solid #7C7979;
+  background: rgba(55, 196, 97, 0.66);
+  margin: 30px;
 }
 
-.read-the-docs {
-  color: #888;
+.ratings-panel {
+  background: rgba(138, 205, 238, 0.78);
+  color: black;
+  font-size: large;
+}
+
+.ratings-panel > h1 {
+  margin-top: 0;
+}
+
+.exit {
+  font-size: x-large;
+  font-weight: bolder;
+  padding-right: 20px;
+  text-align: right;
 }

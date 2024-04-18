@@ -1,14 +1,15 @@
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Pantry from './pages/Pantry'
-import Explore from './pages/Explore'
+import Explore from './pages/explore/Explore'
 import QuickBites from './pages/QuickBites'
 import Restaurant from './pages/Restaurant/Restaurant'
 import Cart from './pages/Cart'
+import PanelPopup from './RatingPanel'
 function App() {
 
   return (
-    <>
+    <div className='app'>
     <Router>
         {/* This defines all pages (path) of the website 
             and the component that represents the page
@@ -20,9 +21,10 @@ function App() {
           <Route path="/quickbites" element={<QuickBites />} />
           <Route path="/restaurant" element={<Restaurant />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/panel" element={<PanelPopup />} />
         </Routes>
     </Router>
-    </>
+    </div>
   )
 }
 
