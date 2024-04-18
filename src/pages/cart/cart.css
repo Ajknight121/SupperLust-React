@@ -3,6 +3,14 @@
     color: black;
 }
 
+.back {
+    float: left;
+    position: absolute;
+}
+h2 {
+    width: 100%;
+}
+
 .content {
     background-color: #FFEFD8;
 }

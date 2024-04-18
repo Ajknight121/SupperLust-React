@@ -2,6 +2,7 @@ import "./cart.css"
 import CartItem from './components/CartItem'
 import leftArrow from "../../images/left-arrow.png"
 import star from "../../images/full-star.png"
+import { Link } from "react-router-dom"
 
 let currentTime = new Date()
 const exampleBag = {
@@ -24,8 +25,10 @@ const Cart = () => {
   return (
     <div className='cart'>
       <div className='header'>
-        <div>
-          <img src={leftArrow} width={"60px"} height={"50px"} />
+        <div className="back">
+          <Link to={"/restaurant"}>
+            <img src={leftArrow} width={"60px"} height={"50px"} />
+          </Link>
         </div>
         <h2>My Shopping Cart</h2>
       </div>
@@ -45,7 +48,9 @@ const Cart = () => {
           </div>
         </div>
       </div>
-      <button className="finalize">Finalize Order</button>
+      <Link to={"/"}>
+        <button className="finalize">Finalize Order</button>
+      </Link>
     </div>
   )
 }
