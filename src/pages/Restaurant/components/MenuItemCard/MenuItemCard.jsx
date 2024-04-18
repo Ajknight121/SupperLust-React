@@ -19,20 +19,25 @@ const MenuItemCard = ({ item, addToCart }) => {
 
   return (
     <div className="menu-item-card">
-      <div className="item-image">
-        <img src={image} alt={name} />
+      <div className='card-header'>
+        <h3 style={{padding: "5px"}}>{name}</h3>
+        <div className="add-button" onClick={() => addToCart(item)}>
+          +
+        </div>
       </div>
-      <div className="item-details">
-        <h3>{name}</h3>
-        <p>Rating: {renderStars()}</p>
-        <p>
-          Price: <span className="price">{price}</span>
-        </p>
-        {pickUpTime && <p>Pick-Up Time: {pickUpTime}</p>}
+      <div className='card-content'>
+        <div className="item-image">
+          <img src={image} alt={name} />
+        </div>
+        <div className="item-details">
+          <p>Rating: {renderStars()}</p>
+          <p>
+            Price: <span className="price">{price}</span>
+          </p>
+          {pickUpTime && <p>Pick-Up Time: {pickUpTime}</p>}
+        </div>
       </div>
-      <div className="add-button" onClick={() => addToCart(item)}>
-        +
-      </div>
+      
     </div>
   );
 };

@@ -1,7 +1,7 @@
 /* App.css */
 .App {
   text-align: center;
-  padding: 20px;
+  padding: 10px;
   background-color: #83abae;
   position: relative;
 }
@@ -22,7 +22,7 @@ h2 {
   background-color: #f0f0f0;
   padding: 20px;
   border-radius: 4px;
-  width: 40%;
+  width: 100%;
   min-width: fit-content;
   
 }

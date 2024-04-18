@@ -27,7 +27,7 @@ const Cart = () => {
       <div className='header'>
         <div className="back">
           <Link to={"/restaurant"}>
-            <img src={leftArrow} width={"60px"} height={"50px"} />
+            <div className="back">&lt;</div>
           </Link>
         </div>
         <h2>My Shopping Cart</h2>

@@ -4,8 +4,9 @@
 }
 
 .back {
-    float: left;
-    position: absolute;
+    font-size: 50px;
+    cursor: pointer;
+    color:black;
 }
 h2 {
     width: 100%;
