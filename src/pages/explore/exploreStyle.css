@@ -9,6 +9,7 @@
     padding: 10px;
 }
 input {
+    color: black;
     background: #EDEDED;
     width: 100%;
     box-sizing: border-box;
