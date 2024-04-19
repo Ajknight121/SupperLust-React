@@ -82,7 +82,7 @@ const Restaurant = () => {
   const handleCartClick = () => {
     const totalQuantity = cart.reduce((total, item) => total + item.quantity, 0);
     localStorage.setItem('cart', JSON.stringify(cart));
-    window.location.href = 'cart.html';
+    window.location.href = 'cart';
   };
 
   return (

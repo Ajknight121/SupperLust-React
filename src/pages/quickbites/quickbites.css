@@ -1,0 +1,54 @@
+
+.page-header {
+    display: flex;
+    flex-direction: row;
+    padding: 0 10px;
+}
+
+.page {
+    background-color: #83ABAF;
+    box-sizing: border-box;
+    color: black;
+    height: 100%;
+}
+
+.categories {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.category {
+    box-sizing: border-box;
+    background: #FFEFD8;
+    height: fit-content;
+    padding: 2px;
+    border-radius: 4px;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 5px;
+    font-size: small;
+    
+}
+
+.category > div {
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    gap:10px;
+    overflow-x: scroll;
+}
+
+.small-item {
+    background-color: #f0f0f0;
+    width: 100px;
+    height: 100%;
+    padding:10px;
+    flex-shrink: 0;
+}
+
+h4 {
+    margin: 0;
+    padding: 0;
+}

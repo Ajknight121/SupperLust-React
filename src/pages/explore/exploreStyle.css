@@ -61,7 +61,7 @@ hr {
     border-radius: 5px;
 }
 
-img {
+.images > img {
     margin-right: 10px;
 }
 .images {

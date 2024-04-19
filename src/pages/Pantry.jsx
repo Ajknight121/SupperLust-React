@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+import "./pantry.css"
 const Pantry = () => {
   return (
-    <div>
-        <div>
+    <div className='pantry'>
+        <div className='pantry-nav'>
             <Link to="/explore">
                 Explore
             </Link>
@@ -20,6 +20,7 @@ const Pantry = () => {
             <Link to="/cart">
                 Checkout View
             </Link>
+            <br/>
             <Link to="/panel">
                 Panel
             </Link>

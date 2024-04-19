@@ -1,5 +1,4 @@
 // Header.js
-import React from 'react';
 import './Header.css';
 import shoppingCartImage from '../../assets/Shopping-Cart.png';
 import { Link } from 'react-router-dom';

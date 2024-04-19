@@ -1,6 +1,7 @@
 import { useState } from "react"
 import blankStar from "./images/hollow-star.png"
 import fullStar from "./images/full-star.png"
+import { Link } from "react-router-dom";
 
 export default function RatingPopup() {
     let [prepareRating, setPrepareRating] = useState(1);
@@ -13,7 +14,9 @@ export default function RatingPopup() {
   return (
     <div className="Panel">
         <div className="ratings-panel">
-            <div className="exit" onClick={() => console.log("Close rating panel")}>X</div>
+            <Link to={"/"}>
+                <div className="exit" onClick={() => console.log("Close rating panel")}>X</div>
+            </Link>
             <h1>How would you rate this meal?</h1>
             <div className="ratings">
                 <div className="rate">
@@ -32,7 +35,9 @@ export default function RatingPopup() {
                     {prepRate.map((val) => (<img key={val} src={difficultyRating >= val ? fullStar : blankStar} width={"50px"} height={"50px"} onClick={() => setDifficultyRating(val)}/>))}
                 </div>
             </div>
-            <button className="submit-rating" onClick={() => console.log("submit Rating")}>Submit</button>
+            <Link to={"/"}>
+                <button className="submit-rating" onClick={() => console.log("submit Rating")}>Submit</button>
+            </Link>
         </div>
     </div>
   )

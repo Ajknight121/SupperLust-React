@@ -69,7 +69,9 @@ const Explore = () => {
       </div>
       <div className='explore-results'>
         {restaurants.map((store, index) => (
-          <ExploreResult key={index} restaurant={store}/>
+          <Link key={index + "-"} to={"/restaurant"}>
+            <ExploreResult key={index} restaurant={store}/>
+          </Link>
         ))}
       </div>
     </div>
