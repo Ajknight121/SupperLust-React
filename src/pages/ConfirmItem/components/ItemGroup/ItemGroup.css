@@ -1,0 +1,7 @@
+.item-confirmation-item-group {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center; /* Center items horizontally */
+  align-items: center;
+  
+}
