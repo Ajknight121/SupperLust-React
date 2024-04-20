@@ -1,34 +1,11 @@
 import "./exploreStyle.css"
 import { Link } from 'react-router-dom'
 import ExploreResult from './components/ExploreResult'
+import { useContext } from "react"
+import { SiteContext } from "../../Domain/SiteContext"
+
 const Explore = () => {
-  const bear = {
-    name: "Bear 5 Burger",
-    price: 30,
-    type: "Burger",
-    distance: 0.3
-  }
-  let restaurants = [
-    {
-      name: "I Dream of Falafel",
-      price: 10,
-      type: "Mediterranean",
-      distance: 1
-    },
-    {
-      name: "I Dream of Queso Fundido",
-      price: 10,
-      type: "Mexican",
-      distance: 1
-    },
-    {
-      name: "Pizza Time",
-      price: 10,
-      type: "Pizza",
-      distance: 2
-    },
-    bear
-  ]
+  let {restaurants, setCurrentRestaurant} = useContext(SiteContext)
   return (
     <div className='explore'>
       <nav>
@@ -69,7 +46,7 @@ const Explore = () => {
       </div>
       <div className='explore-results'>
         {restaurants.map((store, index) => (
-          <Link key={index + "-"} to={"/restaurant"}>
+          <Link onClick={() => setCurrentRestaurant(store)} key={index + "-"} to={"/restaurant"}>
             <ExploreResult key={index} restaurant={store}/>
           </Link>
         ))}
