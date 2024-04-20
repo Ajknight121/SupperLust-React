@@ -2,20 +2,20 @@
 
 
 export default function CartItem( {item} ) {
-    let {itemName, restaurantName, bagImg, isDelivery, price,time} = item
+    let {name, image, isDelivery = true, price, pickUpTime, restaurant} = item
   return (
     <div className="cart-item">
       <div className="cart-item-info">
         <div>
-          {itemName} - {restaurantName}
+          {name} - {restaurant}
         </div>
         <div className="cart-info-content">
-          <img src={bagImg} height={"70px"} width={"70px"} />
+          <img src={image} height={"70px"} width={"70px"} />
           <div>
             <ul>
               <li>{isDelivery ? "Delivery" : "Pickup"}</li>
-              <li>${price}</li>
-              <li>{time}</li>
+              <li>{price}</li>
+              <li>{pickUpTime}</li>
             </ul>
           </div>
         </div>

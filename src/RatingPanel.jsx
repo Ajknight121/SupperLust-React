@@ -1,6 +1,6 @@
 import { useState } from "react"
-import blankStar from "./images/hollow-star.png"
-import fullStar from "./images/full-star.png"
+// import blankStar from "./images/hollow-star.png"
+// import fullStar from "./images/full-star.png"
 import { Link } from "react-router-dom";
 
 export default function RatingPopup() {
@@ -22,17 +22,17 @@ export default function RatingPopup() {
                 <div className="rate">
                     Enjoyed Preparing
                     <br/>
-                    {prepRate.map((val) => (<img key={val} src={prepareRating >= val ? fullStar : blankStar} width={"50px"} height={"50px"} onClick={() => setPrepareRating(val)}/>))}
+                    {prepRate.map((val) => (<img key={val} src={prepareRating >= val ? "images/full-star.png" : "images/hollow-star.png"} width={"50px"} height={"50px"} onClick={() => setPrepareRating(val)}/>))}
                 </div>
                 <div className="rate">
                     Enjoyed Eating
                     <br/>
-                    {prepRate.map((val) => (<img key={val} src={eatRating >= val ? fullStar : blankStar} width={"50px"} height={"50px"} onClick={() => setEatRating(val)}/>))}
+                    {prepRate.map((val) => (<img key={val} src={eatRating >= val ? "images/full-star.png" : "images/hollow-star.png"} width={"50px"} height={"50px"} onClick={() => setEatRating(val)}/>))}
                 </div>
                 <div className="rate">
                     How Difficult
                     <br/>
-                    {prepRate.map((val) => (<img key={val} src={difficultyRating >= val ? fullStar : blankStar} width={"50px"} height={"50px"} onClick={() => setDifficultyRating(val)}/>))}
+                    {prepRate.map((val) => (<img key={val} src={difficultyRating >= val ? "images/full-star.png" : "images/hollow-star.png"} width={"50px"} height={"50px"} onClick={() => setDifficultyRating(val)}/>))}
                 </div>
             </div>
             <Link to={"/"}>

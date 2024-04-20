@@ -1,5 +1,4 @@
 // MenuGroup.js
-import React from 'react';
 import '../../Restaurant.css';
 import MenuItemCard from '../MenuItemCard/MenuItemCard';
 
