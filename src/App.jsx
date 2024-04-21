@@ -1,6 +1,6 @@
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Pantry from './pages/Pantry'
+import Pantry from './pages/pantry/Pantry'
 import Explore from './pages/explore/Explore'
 import QuickBites from './pages/quickbites/QuickBites'
 import Restaurant from './pages/Restaurant/Restaurant'
@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div className='app'>
-    <Router>
+      <Router>
         {/* This defines all pages (path) of the website 
             and the component that represents the page
             To navigate between pages add a <Link> component inside the component
@@ -23,7 +23,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/panel" element={<PanelPopup />} />
         </Routes>
-    </Router>
+      </Router>
     </div>
   )
 }

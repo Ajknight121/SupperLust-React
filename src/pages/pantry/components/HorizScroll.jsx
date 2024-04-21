@@ -1,7 +1,9 @@
+import PantryItem from "./PantryItem"
+
 /* eslint-disable react/prop-types */
 
-export default function HorizontalScroll({ items, urgencies }) {
-  <div className="flex-container">
-
+export default function HorizontalScroll({ items, urgent }) {
+  <div className="hscroll">
+    {items.map((item) => (<PantryItem item={item} urgent={urgent} />))}
   </div>
 }
