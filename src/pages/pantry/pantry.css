@@ -154,3 +154,12 @@ a.add-item {
 #alphabetical-hscroll {
     display: block;
 }
+
+.lower {
+    background-image: url("images/pantry-background.png");
+}
+
+
+.pantry-item {
+    width: 100px;
+}
