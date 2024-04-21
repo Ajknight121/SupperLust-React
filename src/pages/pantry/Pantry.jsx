@@ -47,7 +47,7 @@ export default function Pantry() {
         {/* <img id="pantry-background" src="images/pantry-background.png" /> */}
         <div className="urgent-shelf">
           <div className="hscroll">
-            {items_expiring_soon.map((item) => (<PantryItem key={item} item={item} urgent={true} />))}
+            {items_expiring_soon.map((item,index) => (<PantryItem key={item.name + index} item={item} urgent={true} />))}
           </div>
         </div>
         {/* <img id="shelf-first" src="images/shelf-1.png" /> */}
