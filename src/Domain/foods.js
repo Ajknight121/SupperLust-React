@@ -386,6 +386,113 @@ export const RamenWRobbie = {
   meals: RobbieMeals,
 };
 
+//
+//Big Z's Dried Confections and Jerkies
+//
+
+const ZBags = [
+  {
+    id: 1,
+    image: "images/full-star.png",
+    name: "Misshaped Food Bag",
+    rating: 4,
+    price: "$3.50",
+    pickUpTime: "7:00 PM",
+    isBag: true,
+  },
+];
+
+const ZMeals = [
+  {
+    id: 4,
+    image: "images/bananas-unfrozen.png",
+    name: "Spicy Dried Bananas (1lb)",
+    rating: 5,
+    price: "$9.25",
+    isBag: false,
+  },
+  {
+    id: 5,
+    image: "images/hollow-star.png",
+    name: "Cinnamon Dried Apples (0.5lb)",
+    rating: 1,
+    price: "$5.00",
+    isBag: false,
+  },
+  {
+    id: 6,
+    image: "images/hollow-star.png",
+    name: "Pork Tenderloin Jerky (1lb)",
+    rating: 3,
+    price: "$15.99",
+    isBag: false,
+  },
+];
+
+export const ZConfections = {
+  id: 1.7,
+  name: "Zee Confections and Jerkies",
+  price: 7,
+  type: "Snack Store",
+  distance: 4.9,
+  time: 9,
+  bags: ZBags,
+  meals: ZMeals,
+};
+
+//
+// Gumaste Coffeehouse
+//
+
+const GumasteBags = [
+  {
+    id: 1,
+    image: "images/full-star.png",
+    name: "Misc. bag of scones",
+    rating: 2,
+    price: "$3.50",
+    pickUpTime: "2:00 PM",
+    isBag: true,
+  },
+];
+
+const GumasteMeals = [
+  {
+    id: 4,
+    image: "images/hollow-star.png",
+    name: "Black Coffee",
+    rating: 2,
+    price: "$4.50",
+    isBag: false,
+  },
+  {
+    id: 5,
+    image: "images/hollow-star.png",
+    name: "Distro Danish",
+    rating: 3,
+    price: "$5.00",
+    isBag: false,
+  },
+  {
+    id: 6,
+    image: "images/hollow-star.png",
+    name: "Can of Diet Coke",
+    rating: 4,
+    price: "$1.99",
+    isBag: false,
+  },
+];
+
+export const GumasteCoffee = {
+  id: 1.8,
+  name: "Gumaste Coffeehouse",
+  price: 5,
+  type: "Cafe",
+  distance: 1.9,
+  time: 9,
+  bags: GumasteBags,
+  meals: GumasteMeals,
+};
 
 
 

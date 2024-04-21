@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { createContext, useState } from "react";
-import {BigRicoPizza, IDOF, bear, SandvichEtc, RoseliaBakery, RamenWRobbie} from "./foods.js"
+import {BigRicoPizza, IDOF, bear, SandvichEtc, RoseliaBakery, RamenWRobbie, ZConfections, GumasteCoffee} from "./foods.js"
 
 // const CurrentDay = new Date("4/15/2024");
 
@@ -18,6 +18,8 @@ let restaurants = [
   SandvichEtc,
   RoseliaBakery,
   RamenWRobbie,
+  ZConfections,
+  GumasteCoffee,
 
 ];
 
