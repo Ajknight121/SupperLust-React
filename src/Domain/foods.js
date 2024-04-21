@@ -279,6 +279,113 @@ export const SandvichEtc = {
 };
 
 
+//Roselia's Bakery
+
+
+const RoseliaBags = [
+  {
+    id: 1,
+    image: "images/full-star.png",
+    name: "Random Baked Goods",
+    rating: 5,
+    price: "$2.50",
+    pickUpTime: "2:00 PM",
+    isBag: true,
+  },
+];
+
+const RoseliaMeals = [
+  {
+    id: 4,
+    image: "images/hollow-star.png",
+    name: "Chocolate Bunny",
+    rating: 5,
+    price: "$2.50",
+    isBag: false,
+  },
+  {
+    id: 5,
+    image: "images/hollow-star.png",
+    name: "Butterscotch Bunny",
+    rating: 1,
+    price: "$2.50",
+    isBag: false,
+  },
+  {
+    id: 6,
+    image: "images/burger.jpg",
+    name: "Duane Burger",
+    rating: 4,
+    price: "$14.94",
+    isBag: false,
+  },
+];
+
+export const RoseliaBakery = {
+  id: 1.5,
+  name: "Roselia's Bakery",
+  price: 5,
+  type: "Bakery",
+  distance: 1,
+  time: 20,
+  bags: RoseliaBags,
+  meals: RoseliaMeals,
+};
+
+//
+//Ramen with Robbie
+//
+
+const RobbieBags = [
+  {
+    id: 1,
+    image: "images/full-star.png",
+    name: "Lefover add-ins bag",
+    rating: 5,
+    price: "$6.00",
+    pickUpTime: "11:00 PM",
+    isBag: true,
+  },
+];
+
+const RobbieMeals = [
+  {
+    id: 4,
+    image: "images/hollow-star.png",
+    name: "Spicy Z. Ramen",
+    rating: 5,
+    price: "$17.00",
+    isBag: false,
+  },
+  {
+    id: 5,
+    image: "images/hollow-star.png",
+    name: "A large pile of plan noodles",
+    rating: 1,
+    price: "$1.00",
+    isBag: false,
+  },
+  {
+    id: 6,
+    image: "images/miso.png",
+    name: "Miso Ramen",
+    rating: 3,
+    price: "$10.54",
+    isBag: false,
+  },
+];
+
+export const RamenWRobbie = {
+  id: 1.6,
+  name: "Ramen With Robbie",
+  price: 17,
+  type: "Ramen",
+  distance: 2.3,
+  time: 20,
+  bags: RobbieBags,
+  meals: RobbieMeals,
+};
+
 
 
 
