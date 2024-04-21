@@ -129,12 +129,12 @@ export default function SiteContextProvider({ children }) {
   let [currentRestaurant, setCurrentRestaurant] = useState(IDOF);
   let [pantry, setPantry] = useState(foods);
   let [history, setHistory] = useState([])
+  let [future, setFuture] = useState([]);
   let [cart, setCart] = useState(() => {
     // load cart from localStorage
     const savedCart = localStorage.getItem("cart");
     return savedCart ? JSON.parse(savedCart) : [];
   });
-  let [mealTimeline, setMealTimeline] = useState([]);
 
   function addItemToCart(meal) {
     setCart((prevCart) => [...prevCart, meal]);
@@ -143,8 +143,12 @@ export default function SiteContextProvider({ children }) {
     setCart((prevCart) => prevCart.filter((item) => item !== meal));
   }
 
-  function addMealToHistory(meal) {
-    setMealTimeline((prev) => [...prev, meal]);
+  function addMealToTimeline(meal, isFuture) {
+    if (isFuture) {
+      setFuture((prev) => [...prev, meal])
+    } else {
+      setHistory((prev) => [...prev, meal]);
+    }
   }
 
   return (
@@ -156,13 +160,12 @@ export default function SiteContextProvider({ children }) {
         setCart,
         addItemToCart,
         removeItemFromCart,
-        mealHistory: mealTimeline,
-        addMealToHistory,
         restaurants,
         currentRestaurant,
         setCurrentRestaurant,
         history,
-        setHistory,
+        future,
+        addMealToTimeline,
       }}
     >
       {children}
