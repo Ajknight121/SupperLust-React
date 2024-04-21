@@ -24,7 +24,11 @@ let restaurants = [
 ];
 
 export default function SiteContextProvider({ children }) {
-  let [currentRestaurant, setCurrentRestaurant] = useState(IDOF);
+  let [currentRestaurant, setCurrentRestaurant] = useState(() => {
+    // load cart from localStorage
+    const savedStore = localStorage.getItem("store");
+    return savedStore ? JSON.parse(savedStore) : [];
+  });
   let [pantry, setPantry] = useState(foods);
   let [history, setHistory] = useState([])
   let [future, setFuture] = useState([]);

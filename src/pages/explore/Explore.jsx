@@ -27,6 +27,11 @@ const Explore = () => {
     );
   });
 
+  const handleChoice = (store) => {
+    setCurrentRestaurant(store)
+    localStorage.setItem("store", JSON.stringify(store))
+  }
+
   return (
     <div className="explore">
       <nav>
@@ -67,7 +72,7 @@ const Explore = () => {
       </div>
       <div className='explore-results'>
         {filteredRestaurants.map((store, index) => (
-          <Link onClick={() => setCurrentRestaurant(store)} key={index + "-"} to={"/restaurant"}>
+          <Link onClick={() => handleChoice(store)} key={index + "-"} to={"/restaurant"}>
             <ExploreResult key={index} restaurant={store}/>
           </Link>
         ))}
