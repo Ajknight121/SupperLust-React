@@ -26,13 +26,15 @@ import { SiteContext } from "../../Domain/SiteContext"
 
 
 export default function Cart() {
-  const {cart, setCart, setHistory} = useContext(SiteContext)
+  const {cart, setCart, addMealToTimeline} = useContext(SiteContext)
   let bags = cart.filter((item) => item.isBag == true);
   let meals = cart.filter((item) => item.isBag == false);
   console.log(cart)
 
   const handleFinalize = () => {
-    setHistory((prev) => [...prev, cart])
+    cart.forEach((item) =>  {
+      addMealToTimeline(item)
+    })
     setCart([])
   }
   return (
