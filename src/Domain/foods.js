@@ -1,13 +1,16 @@
 
 
 
-
+//
 //I dream of falafel
+//
+
 let IDOFbags = [
+
   {
     id: 1,
     image: "images/full-star.png",
-    name: "Shawarma Wrap Bag",
+    name: "Leftover Pita Bread Bag",
     rating: 4,
     price: "$4.75",
     pickUpTime: "7:00 PM",
@@ -16,18 +19,9 @@ let IDOFbags = [
   {
     id: 2,
     image: "images/full-star.png",
-    name: "Falafel Pita Bread Bag",
-    rating: 2,
-    price: "$4.75",
-    pickUpTime: "7:00 PM",
-    isBag: true,
-  },
-  {
-    id: 3,
-    image: "images/full-star.png",
-    name: "Couscous Bag",
+    name: "Misc. Ingredients Bag",
     rating: 4,
-    price: "$2.00",
+    price: "$5.00",
     pickUpTime: "7:00 PM",
     isBag: true,
   },
@@ -35,27 +29,27 @@ let IDOFbags = [
 
 const IDOFmeals = [
   {
+    id: 3,
+    image: "images/hollow-star.png",
+    name: "Hummus and Pita",
+    rating: 2,
+    price: "$55.00",
+    isBag: false,
+  },
+  {
     id: 4,
     image: "images/hollow-star.png",
-    name: "Hummus Bag",
-    rating: 3,
-    price: "$2.00",
+    name: "Baba Ganoush",
+    rating: 2,
+    price: "$45.00",
     isBag: false,
   },
   {
     id: 5,
     image: "images/hollow-star.png",
-    name: "Baba Ganoush Bag",
-    rating: 4,
-    price: "$2.00",
-    isBag: false,
-  },
-  {
-    id: 6,
-    image: "images/hollow-star.png",
-    name: "Tabbouleh Bag",
-    rating: 5,
-    price: "$2.00",
+    name: "Tabbouleh",
+    rating: 1,
+    price: "$67.00",
     isBag: false,
   },
 ];
@@ -71,9 +65,9 @@ export const IDOF = {
   meals: IDOFmeals,
 };
 
-
+//
 //Bear 5 burger//
-
+//
 
 const BearBags = [
   {
@@ -127,10 +121,10 @@ const BearMeals = [
 export const bear = {
   id: 1.2,
   name: "Bear 5 Burger",
-  price: 30,
+  price: 18,
   type: "Burger",
   distance: 0.3,
-  time: 10,
+  time: 50,
   bags: BearBags,
   meals: BearMeals,
 };
@@ -199,10 +193,10 @@ const BigRicoMeals = [
 export const BigRicoPizza = {
   id: 1.3,
   name: "Big Rico's Pizza",
-  price: 30,
+  price: 14,
   type: "Italian",
-  distance: 1,
-  time: 20,
+  distance: 1.6,
+  time: 10,
   bags: BigRicoBags,
   meals: BigRicoMeals,
 };
@@ -327,7 +321,7 @@ export const RoseliaBakery = {
   price: 5,
   type: "Bakery",
   distance: 1,
-  time: 20,
+  time: 12,
   bags: RoseliaBags,
   meals: RoseliaMeals,
 };
@@ -378,10 +372,10 @@ const RobbieMeals = [
 export const RamenWRobbie = {
   id: 1.6,
   name: "Ramen With Robbie",
-  price: 17,
+  price: 20,
   type: "Ramen",
   distance: 2.3,
-  time: 20,
+  time: 60,
   bags: RobbieBags,
   meals: RobbieMeals,
 };
@@ -435,7 +429,7 @@ export const ZConfections = {
   price: 7,
   type: "Snack Store",
   distance: 4.9,
-  time: 9,
+  time: 0,
   bags: ZBags,
   meals: ZMeals,
 };
@@ -486,9 +480,9 @@ const GumasteMeals = [
 export const GumasteCoffee = {
   id: 1.8,
   name: "Gumaste Coffeehouse",
-  price: 5,
+  price: 4,
   type: "Cafe",
-  distance: 1.9,
+  distance: 3.4,
   time: 9,
   bags: GumasteBags,
   meals: GumasteMeals,
