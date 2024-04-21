@@ -208,6 +208,77 @@ export const BigRicoPizza = {
 };
 
 
+// Sandvich etc.
+
+
+const SandvichBags = [
+  {
+    id: 1,
+    image: "images/full-star.png",
+    name: "Mystery Meat Bag",
+    rating: 4,
+    price: "$5.50",
+    pickUpTime: "6:35 PM",
+    isBag: true,
+  },
+  {
+    id: 2,
+    image: "images/full-star.png",
+    name: "Gaben Bag",
+    rating: 2,
+    price: "$9.94",
+    pickUpTime: "3:00 PM",
+    isBag: true,
+  },
+];
+
+const SandvichMeals = [
+  {
+    id: 4,
+    image: "images/hollow-star.png",
+    name: "Classic Sandvich",
+    rating: 5,
+    price: "8.00",
+    isBag: false,
+  },
+  {
+    id: 5,
+    image: "images/hollow-star.png",
+    name: "Buffalo Steak Sandvich",
+    rating: 1,
+    price: "$7.50",
+    isBag: false,
+  },
+  {
+    id: 6,
+    image: "images/hollow-star.png",
+    name: "Dalokohs bar",
+    rating: 2,
+    price: "$2.59",
+    isBag: false,
+  },
+  {
+    id: 7,
+    image: "images/hollow-star.png",
+    name: "A Banana",
+    rating: 5,
+    price: "$1.50",
+    isBag: false,
+  },
+];
+
+export const SandvichEtc = {
+  id: 1.4,
+  name: "Sandviches etc.",
+  price: 10,
+  type: "Deli",
+  distance: 1,
+  time: 5,
+  bags: SandvichBags,
+  meals: SandvichMeals,
+};
+
+
 
 
 

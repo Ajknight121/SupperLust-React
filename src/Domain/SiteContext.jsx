@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { createContext, useState } from "react";
-import {BigRicoPizza, IDOF, bear} from "./foods.js"
+import {BigRicoPizza, IDOF, bear, SandvichEtc} from "./foods.js"
 
 // const CurrentDay = new Date("4/15/2024");
 
@@ -15,6 +15,7 @@ let restaurants = [
   IDOF,
   bear,
   BigRicoPizza,
+  SandvichEtc,
 ];
 
 export default function SiteContextProvider({ children }) {
