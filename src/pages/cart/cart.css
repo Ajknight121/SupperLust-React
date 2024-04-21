@@ -14,12 +14,14 @@ h2 {
 
 .content {
     background-color: #FFEFD8;
+    padding: 10px 0;
 }
 .cart-item {
     background-color: #DEE5E5;
     display: flex;
     flex-direction: row;
-    height: 110px;
+    /* height: 110px; */
+    min-height: fit-content;
     box-sizing: border-box;
     color: black;
     text-align: left;
@@ -36,7 +38,8 @@ ul {
 
 .cart-item-info {
     width: 75%;
-    height: 80px;
+    height: 100%;
+    font-size: min(.8em, 28vw);
 }
 
 .cart-info-content {

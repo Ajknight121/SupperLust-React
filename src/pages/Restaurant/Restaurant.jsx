@@ -43,7 +43,7 @@ const Restaurant = () => {
   };
 
   return (
-    <div className="App">
+    <div className="page">
       <Header
         name={currentRestaurant.name}
         totalQuantity={cart.reduce((total, item) => total + item.quantity, 0)}

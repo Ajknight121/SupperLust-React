@@ -1,7 +1,5 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import "./pantry.css"
-import HorizontalScroll from './components/HorizScroll'
 
 export default function Pantry() {
 
@@ -23,7 +21,7 @@ export default function Pantry() {
         <img id="bottom-oval" src="images/solid-brown-ellipse-1.png" />
         <img id="center-oval" src="images/solid-brown-shaded-ellipse-2.png" />
       </div>
-      <div classname="lower">
+      <div className="lower">
 
         <img id="pantry-background" src="images/pantry-background.png" />
         <img id="shelf-first" src="images/shelf-1.png" />
