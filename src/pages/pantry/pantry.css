@@ -102,46 +102,37 @@ a.add-item {
     height: 18%;
 }
 
-#pantry-background {
-    position: absolute;
-    left: 0px;
-    top: 17%;
-    width: 100%;
-    height: 85%;
-    z-index: 32;
-}
-
 #shelf-first {
-    position: absolute;
+    /* position: absolute; */
     left: 0px;
-    top: 32%;
+    /* top: 32%; */
     width: 100%;
     height: 2%;
     z-index: 32;
 }
 
 #shelf-second {
-    position: absolute;
+    /* position: absolute; */
     left: 0px;
-    top: 50%;
+    /* top: 50%; */
     width: 100%;
     height: 2%;
     z-index: 32;
 }
 
 #shelf-lower-1 {
-    position: absolute;
+    /* position: absolute; */
     left: 0px;
-    top: 67%;
+    /* top: 67%; */
     width: 100%;
     height: 2%;
     z-index: 32;
 }
 
 #shelf-lower-2 {
-    position: absolute;
+    /* position: absolute; */
     left: 0px;
-    top: 84%;
+    /* top: 84%; */
     width: 100%;
     height: 2%;
     z-index: 32;
@@ -162,18 +153,82 @@ a.add-item {
     flex-direction: row;
     overflow-x: scroll;
 }
+
 .lower {
     background-image: url("images/pantry-background.png");
     position: absolute;
-    z-index: 99;
+    z-index: 30;
     width: 100%;
-    margin-top: 110px;
+    margin-top: 30%;
+    height: 85%;
 }
-.urgent-shelf {
+
+.hscroll {
     display: flex;
     flex-direction: row;
+    column-gap: 20px;
 }
 
 .pantry-item {
     width: 100px;
+    height: 120px;
+    background-color: #edededc4
+}
+
+.hscroll>.pantry-item>p.above {
+    font-size: 12pt;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.hscroll>.pantry-item>img {
+    height: 63px;
+    width: 55px;
+    margin-left: 10px;
+    margin-right: 10px;
+    mix-blend-mode: darken
+}
+
+.hscroll>.pantry-item>p.below {
+    font-size: 8pt;
+    line-height: 1;
+    margin-top: 0px;
+}
+
+.meal {
+    width: 100px;
+    height: 90px;
+    background-color: #edededc4;
+}
+
+.timeline>.meal>img {
+    height: 60px;
+    width: 52px;
+    margin-left: 20px;
+    margin-right: 20px;
+    mix-blend-mode: darken
+}
+
+.timeline>.meal>span.above {
+    font-size: 8pt;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: row;
+    overflow: scroll;
+    column-gap: 15px;
+    flex-basis: 50%;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+#timelines {
+    display: flex;
+    flex-direction: row;
+}
+
+#timelines-hdr {
+    display: flex;
+    justify-content: space-around
 }

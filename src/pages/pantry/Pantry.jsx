@@ -1,22 +1,82 @@
 import { Link } from "react-router-dom";
 import "./pantry.css";
-import PantryItem from "./components/PantryItem";
 import HorizontalScroll from './components/HorizScroll'
 import items from "./item_data.json"
+import Timeline from "./components/Timeline";
 
 export default function Pantry() {
-  let  items_expiring_soon = [...items];
-  console.log(items_expiring_soon)
+  let items_expiring_soon = [...items];
   items_expiring_soon.sort(function (a, b) {
     let a_ls = parseInt(a.lifespan.split(" ")[0].replace("+", ""));
     let b_ls = parseInt(b.lifespan.split(" ")[0].replace("+", ""));
     return a_ls - b_ls;
+  })
+  let items_expiring_soon_ = items_expiring_soon.filter((a) => {
+    let ls = parseInt(a.lifespan.split(" ")[0].replace("+", ""));
+    return ls < 12;
   })
 
   const items_alphabetized = [...items];
   items_alphabetized.sort(function (a, b) {
     return a.name.localeCompare(b.name);
   })
+
+  const past_meals = [
+    {
+      "id": 1,
+      "planned": "3 days",
+      "scheduled": "2 days",
+      "present_ingred": [{
+        "lifespan": "9 days",
+        "quantity": "x8",
+        "name": "Carrots (whole)",
+        "imgFile": "images/carrot.png"
+      }, {
+        "lifespan": "30 days",
+        "quantity": "x1",
+        "name": "Ranch dressing",
+        "imgFile": "images/dressing-ranch.png"
+      }
+      ],
+      "missing_ingred": []
+    },
+    {
+      "id": 1,
+      "planned": "3 days",
+      "scheduled": "2 days",
+      "present_ingred": [{
+        "lifespan": "9 days",
+        "quantity": "x8",
+        "name": "Carrots (whole)",
+        "imgFile": "images/carrot.png"
+      }, {
+        "lifespan": "30 days",
+        "quantity": "x1",
+        "name": "Ranch dressing",
+        "imgFile": "images/dressing-ranch.png"
+      }
+      ],
+      "missing_ingred": []
+    },
+    {
+      "id": 1,
+      "planned": "3 days",
+      "scheduled": "2 days",
+      "present_ingred": [{
+        "lifespan": "9 days",
+        "quantity": "x8",
+        "name": "Carrots (whole)",
+        "imgFile": "images/carrot.png"
+      }, {
+        "lifespan": "30 days",
+        "quantity": "x1",
+        "name": "Ranch dressing",
+        "imgFile": "images/dressing-ranch.png"
+      }
+      ],
+      "missing_ingred": []
+    }
+  ]
 
   return (
     <div className="page">
@@ -42,48 +102,21 @@ export default function Pantry() {
         <img id="center-oval" src="images/solid-brown-shaded-ellipse-2.png" />
       </div>
       <div className="lower">
-        {/* <HorizontalScroll id="expiring-soon-hscroll" items={items_expiring_soon} urgent={true} />
-        <HorizontalScroll id="alphabetical-hscroll" items={items_alphabetized} urgent={false} /> */}
-        {/* <img id="pantry-background" src="images/pantry-background.png" /> */}
-        <div className="urgent-shelf">
-          <div className="hscroll">
-            {items_expiring_soon.map((item) => (<PantryItem key={item} item={item} urgent={true} />))}
-          </div>
+        <div id="timelines-hdr">
+          <h4>Past</h4>
+          <h4>Future</h4>
         </div>
-        {/* <img id="shelf-first" src="images/shelf-1.png" /> */}
-        {/* <img id="shelf-second" src="images/shelf-2.png" />
-        <img id="shelf-lower-1" src="images/shelf-3.png" />
-        <img id="shelf-lower-2" src="images/shelf-3.png" /> */}
+        <div id="timelines">
+          <Timeline id="timeline-past" meals={past_meals} past={true} />
+          <Timeline id="timeline-future" meals={past_meals} past={false} />
+        </div>
+        <img id="shelf-first" src="images/shelf-1.png" />
+        <h4>Expiring Soon!</h4>
+        <HorizontalScroll id="expiring-soon-hscroll" items={items_expiring_soon_} urgent={true} />
+        <img id="shelf-second" src="images/shelf-2.png" />
+        <h4>Alphabetical</h4>
+        <HorizontalScroll id="alphabetical-hscroll" items={items_alphabetized} urgent={false} />
       </div>
     </div>
   );
 }
-
-// const Pantry = () => {
-//   return (
-//     <div className='pantry'>
-//       <div className='pantry-nav'>
-//         <Link to="/explore">
-//           Explore
-//         </Link>
-//         <br />
-//         <Link to="/quickbites">
-//           Quick Bites
-//         </Link>
-//         <br />
-//         <Link to="/restaurant">
-//           Restaurant view
-//         </Link>
-//         <br />
-//         <Link to="/cart">
-//           Checkout View
-//         </Link>
-//         <br />
-//         <Link to="/panel">
-//           Panel
-//         </Link>
-//       </div>
-//       <div>Pantry</div>
-//     </div>
-//   )
-// }

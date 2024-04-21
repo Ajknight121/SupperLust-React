@@ -112,11 +112,5 @@
         "quantity": "x20",
         "name": "Olives",
         "imgFile": "images/olives.png"
-    },
-    {
-        "lifespan": "90 days",
-        "quantity": "x2",
-        "name": "Butter (sticks)",
-        "imgFile": "images/butter.png"
     }
 ]
