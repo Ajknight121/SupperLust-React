@@ -24,6 +24,10 @@ const Pantry = () => {
             <Link to="/panel">
                 Panel
             </Link>
+            <br/>
+            <Link to="/item">
+                item
+            </Link>
         </div>
         <div>Pantry</div>
     </div>
