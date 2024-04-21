@@ -5,8 +5,8 @@ import { useContext, useState } from "react";
 import { SiteContext } from "../../Domain/SiteContext";
 const Explore = () => {
   let { restaurants, setCurrentRestaurant } = useContext(SiteContext);
-  const [travelTime, setTravelTime] = useState(10);
-  const [price, setPrice] = useState(10);
+  const [travelTime, setTravelTime] = useState(30);
+  const [price, setPrice] = useState(100);
   const [portion, setPortion] = useState("Snacks");
 
   const handleTravelTimeChange = (event) => {
@@ -52,7 +52,7 @@ const Explore = () => {
             <option value={10}>{"< $10"}</option>
             <option value={20}>{"< $20"}</option>
             <option value={30}>{"< $30"}</option>
-            <option value={100}>{"any"}</option>
+            <option value={100} defaultValue={true}>{"any"}</option>
           </select>
           <select name="Portion" value={portion} onChange={handlePortionChange}>
             <option value={"Snacks"}>Snacks</option>
@@ -71,6 +71,7 @@ const Explore = () => {
             <ExploreResult key={index} restaurant={store}/>
           </Link>
         ))}
+        {filteredRestaurants.length == 0 ? <div>No Results</div> : ""}
       </div>
     </div>
   );
