@@ -146,3 +146,11 @@ a.add-item {
     height: 2%;
     z-index: 32;
 }
+
+#expiring-soon-hscroll {
+    display: block;
+}
+
+#alphabetical-hscroll {
+    display: block;
+}
