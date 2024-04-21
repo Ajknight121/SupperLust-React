@@ -5,7 +5,7 @@ import Small from "../../components/quickbites/Small"
 export default function QuickBites() {
 
   return (
-    <div className="page">
+    <div className="page quick-bites">
       <div className='page-header'>
         <Link to={"/explore"}>
           Explore
@@ -22,11 +22,6 @@ export default function QuickBites() {
             <Small name="Spagetti bologia" />
             <Small name="Spagetti bologia" />
             <Small name="Spagetti bologia" />
-            <Small name="Spagetti bologia" />
-            <Small name="Spagetti bologia" />
-            <Small name="Spagetti bologia" />
-            <Small name="Spagetti bologia" />
-            <Small name="Spagetti bologia" />
           </div>
         </div>
         <div className="category">
@@ -35,17 +30,11 @@ export default function QuickBites() {
             <Small name="Spagetti bologia" />
             <Small name="Spagetti bologia" />
             <Small name="Spagetti bologia" />
-            <Small name="Spagetti bologia" />
-            <Small name="Spagetti bologia" />
-            <Small name="Spagetti bologia" />
           </div>
         </div>
         <div className="category">
           <h4>Highly Rated</h4>
           <div>
-            <Small name="Spagetti bologia" />
-            <Small name="Spagetti bologia" />
-            <Small name="Spagetti bologia" />
             <Small name="Spagetti bologia" />
             <Small name="Spagetti bologia" />
             <Small name="Spagetti bologia" />
