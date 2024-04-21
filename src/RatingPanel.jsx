@@ -1,6 +1,4 @@
 import { useState } from "react"
-// import blankStar from "./images/hollow-star.png"
-// import fullStar from "./images/full-star.png"
 import { Link } from "react-router-dom";
 
 export default function RatingPopup() {
@@ -12,11 +10,11 @@ export default function RatingPopup() {
 
 
   return (
-    <div className="Panel">
-        <div className="ratings-panel">
+    <div className="panel">
             <Link to={"/"}>
                 <div className="exit" onClick={() => console.log("Close rating panel")}>X</div>
             </Link>
+        <div className="ratings-panel">
             <h1>How would you rate this meal?</h1>
             <div className="ratings">
                 <div className="rate">

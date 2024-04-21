@@ -7,21 +7,21 @@ import { Link } from "react-router-dom"
 import { SiteContext } from "../../Domain/SiteContext"
 
 let currentTime = new Date()
-const exampleBag = {
-  itemName: "Bag A",
-  restaurantName: "Bofa Restaurant",
-  bagImg: "images/full-star.png",
-  isDelivery: true,
-  price: 4.20,
-  time: currentTime.toLocaleString('en-US', {
-    weekday: 'short',
-    month: 'short',
-    day: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
-    hour12: true
-  })
-}
+// const exampleBag = {
+//   itemName: "Bag A",
+//   restaurantName: "Bofa Restaurant",
+//   bagImg: "images/full-star.png",
+//   isDelivery: true,
+//   price: 4.20,
+//   time: currentTime.toLocaleString('en-US', {
+//     weekday: 'short',
+//     month: 'short',
+//     day: 'numeric',
+//     hour: '2-digit',
+//     minute: '2-digit',
+//     hour12: true
+//   })
+// }
 
 export default function Cart() {
   const {cart, setCart} = useContext(SiteContext)
@@ -43,16 +43,12 @@ export default function Cart() {
           <h3>My Bags</h3>
           <div className='list'>
             {bags.map((bag,index) => (<CartItem key={index + "cart"} item={bag}/>))}
-            {/* <CartItem item={exampleBag} />
-            <CartItem item={exampleBag} /> */}
           </div>
         </div>
         <div className='my-bags'>
           <h3>My Orders</h3>
           <div className='list'>
           {meals.map((bag,index) => (<CartItem key={index + "cart"} item={bag}/>))}
-            {/* <CartItem item={exampleBag} />
-            <CartItem item={exampleBag} /> */}
           </div>
         </div>
       </div>
