@@ -6,7 +6,7 @@ import CartItem from './components/CartItem'
 import { Link } from "react-router-dom"
 import { SiteContext } from "../../Domain/SiteContext"
 
-let currentTime = new Date()
+// let currentTime = new Date()
 // const exampleBag = {
 //   itemName: "Bag A",
 //   restaurantName: "Bofa Restaurant",
@@ -23,11 +23,18 @@ let currentTime = new Date()
 //   })
 // }
 
+
+
 export default function Cart() {
-  const {cart, setCart} = useContext(SiteContext)
+  const {cart, setCart, setHistory} = useContext(SiteContext)
   let bags = cart.filter((item) => item.isBag == true);
   let meals = cart.filter((item) => item.isBag == false);
   console.log(cart)
+
+  const handleFinalize = () => {
+    setHistory((prev) => [...prev, cart])
+    setCart([])
+  }
   return (
     <div className='cart'>
       <div className='header'>
@@ -52,7 +59,7 @@ export default function Cart() {
           </div>
         </div>
       </div>
-      <Link to={"/"}>
+      <Link to={"/"} onClick={() => handleFinalize()}>
         <button className="finalize">Finalize Order</button>
       </Link>
     </div>

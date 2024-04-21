@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { createContext, useState } from "react";
 
-const CurrentDay = new Date("4/15/2024");
+// const CurrentDay = new Date("4/15/2024");
 
 export const SiteContext = createContext();
 let ingredientExample = {
@@ -128,6 +128,7 @@ let restaurants = [
 export default function SiteContextProvider({ children }) {
   let [currentRestaurant, setCurrentRestaurant] = useState(IDOF);
   let [pantry, setPantry] = useState(foods);
+  let [history, setHistory] = useState([])
   let [cart, setCart] = useState(() => {
     // load cart from localStorage
     const savedCart = localStorage.getItem("cart");
@@ -160,6 +161,8 @@ export default function SiteContextProvider({ children }) {
         restaurants,
         currentRestaurant,
         setCurrentRestaurant,
+        history,
+        setHistory,
       }}
     >
       {children}
