@@ -7,7 +7,7 @@ export default function Timeline({ meals, past }) {
         <div className="timeline">
             {meals.map((meal) =>
             (<Meal meal={meal} past={past}
-                key={toString(meal.id) + "-" + meal.planned + "-" + meal.scheduled} />)
+                key={meal.id + "-" + meal.planned + "-" + meal.scheduled} />)
             )}
         </div>)
 }

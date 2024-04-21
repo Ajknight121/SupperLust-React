@@ -3,6 +3,8 @@ import "./pantry.css";
 import HorizontalScroll from './components/HorizScroll'
 import items from "./item_data.json"
 import Timeline from "./components/Timeline";
+import ItemFocus from "../../ItemFocus";
+import { useState } from "react";
 
 export default function Pantry() {
   let items_expiring_soon = [...items];
@@ -23,7 +25,7 @@ export default function Pantry() {
 
   const past_meals = [
     {
-      "id": 1,
+      "id": "1",
       "planned": "3 days",
       "scheduled": "2 days",
       "present_ingred": [{
@@ -41,7 +43,7 @@ export default function Pantry() {
       "missing_ingred": []
     },
     {
-      "id": 1,
+      "id": "2",
       "planned": "3 days",
       "scheduled": "2 days",
       "present_ingred": [{
@@ -59,7 +61,7 @@ export default function Pantry() {
       "missing_ingred": []
     },
     {
-      "id": 1,
+      "id": "3",
       "planned": "3 days",
       "scheduled": "2 days",
       "present_ingred": [{
@@ -78,8 +80,12 @@ export default function Pantry() {
     }
   ]
 
+  const [showPanel, setShowPanel] = useState(false);
+  const [selItem, setSelItem] = useState(items_alphabetized[0]);
+
   return (
     <div className="page">
+      {showPanel ? <ItemFocus item={selItem} /> : ""}
       <div className="uppermost-nav">
         <div className="shape-1" id="explore-bttn">
           <img src="images/explore-button.png" />
@@ -112,10 +118,13 @@ export default function Pantry() {
         </div>
         <img id="shelf-first" src="images/shelf-1.png" />
         <h4>Expiring Soon!</h4>
-        <HorizontalScroll id="expiring-soon-hscroll" items={items_expiring_soon_} urgent={true} />
+        <HorizontalScroll id="expiring-soon-hscroll" items={items_expiring_soon_} urgent={true}
+          setSelItem={setSelItem} setShowPanel={setShowPanel} />
         <img id="shelf-second" src="images/shelf-2.png" />
         <h4>Alphabetical</h4>
-        <HorizontalScroll id="alphabetical-hscroll" items={items_alphabetized} urgent={false} />
+        <HorizontalScroll id="alphabetical-hscroll" items={items_alphabetized} urgent={false}
+          setSelItem={setSelItem} setShowPanel={setShowPanel} />
+        <Link to="/item">Item Focus</Link>
       </div>
     </div>
   );
