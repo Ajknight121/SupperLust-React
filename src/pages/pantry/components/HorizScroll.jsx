@@ -4,6 +4,6 @@ import PantryItem from "./PantryItem"
 
 export default function HorizontalScroll({ items, urgent }) {
   <div className="hscroll">
-    {items.map((item) => (<PantryItem key={item} item={item} urgent={urgent} />))}
+    {items.map((item) => (<PantryItem item={item} urgent={urgent} key={item.name} />))}
   </div>
 }
