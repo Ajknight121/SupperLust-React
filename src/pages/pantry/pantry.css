@@ -155,10 +155,24 @@ a.add-item {
     display: block;
 }
 
+/* new styling */
+
+.hscroll {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+}
 .lower {
     background-image: url("images/pantry-background.png");
+    position: absolute;
+    z-index: 99;
+    width: 100%;
+    margin-top: 110px;
 }
-
+.urgent-shelf {
+    display: flex;
+    flex-direction: row;
+}
 
 .pantry-item {
     width: 100px;
