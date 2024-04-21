@@ -46,9 +46,11 @@ const Explore = () => {
             <option value={10}>10 minutes</option>
             <option value={20}>20 minutes</option>
             <option value={30}>30 minutes</option>
+            <option value={60}>60 minutes</option>
           </select>
           <select name="Price" value={price} onChange={handlePriceChange}>
             <option value={10}>{"< $10"}</option>
+            <option value={20}>{"< $20"}</option>
             <option value={30}>{"< $30"}</option>
             <option value={100} defaultValue={true}>{"any"}</option>
           </select>
