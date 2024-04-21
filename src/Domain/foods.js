@@ -73,15 +73,6 @@ const BearBags = [
   {
     id: 1,
     image: "images/PlaceHolder.jpg",
-    name: "Random Slices Bags",
-    rating: 3,
-    price: 4.75,
-    pickup: 19, // 24hr time same day
-    isBag: true,
-  },
-  {
-    id: 2,
-    image: "images/PlaceHolder.jpg",
     name: "5 Bear Bag",
     rating: 5,
     price: 5.55,
@@ -93,7 +84,7 @@ const BearBags = [
 
 const BearMeals = [
   {
-    id: 3,
+    id: 2,
     image: "images/PlaceHolder.jpg",
     name: "Yellow Chicken Pizza",
     rating: 3,
@@ -101,7 +92,7 @@ const BearMeals = [
     isBag: false,
   },
   {
-    id: 4,
+    id: 3,
     image: "images/PlaceHolder.jpg",
     name: "Mutton Chops",
     rating: 3,
@@ -109,7 +100,7 @@ const BearMeals = [
     isBag: false,
   },
   {
-    id: 5,
+    id:4,
     image: "images/PlaceHolder.jpg",
     name: "Pirate Party Platter",
     rating: 5,
@@ -129,9 +120,9 @@ export const bear = {
   meals: BearMeals,
 };
 
-
+//
 //Big Rico's Pizza
-
+//
 
 const BigRicoBags = [
   {
