@@ -11,10 +11,10 @@ const Header = ({ name, totalQuantity, onCartClick }) => {
           <div className="back-arrow">&lt;</div>
         </Link>
         <h2>{name}</h2>
-        <div className="cart-icon" onClick={onCartClick}>
+        <Link to={"/cart"} className="cart-icon" onClick={onCartClick}>
           <img src={'images/Shopping-Cart.png'} alt="Shopping Cart" width={"50px"} height={"50px"}/>
           {totalQuantity > 0 && <div className="cart-count">{totalQuantity}</div>}
-        </div>
+        </Link>
       </div>
     </div>
   );

@@ -39,7 +39,7 @@ const Restaurant = () => {
       0
     );
     localStorage.setItem("cart", JSON.stringify(cart));
-    window.location.href = "/cart";
+    // window.location.href = "/cart";
   };
 
   const handleBack = () => {
