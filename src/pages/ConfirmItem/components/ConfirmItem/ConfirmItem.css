@@ -1,0 +1,13 @@
+/* ItemConfirmation.css */
+.item-confirmation {
+    text-align: center;
+    padding: 20px;
+    background-color: #83abae;
+    position: relative;
+  }
+  
+  .item-confirmation h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #fff;
+  }
