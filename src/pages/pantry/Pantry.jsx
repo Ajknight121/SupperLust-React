@@ -138,7 +138,6 @@ export default function Pantry() {
                   <img src="images/eat-now-button.png" />
                   <span onClick={() => {
                     setPastMeals([...pastMeals, {
-                      "id": (pastMeals.length === 0) ? "1" : toString(parseInt(pastMeals[-1].id, 10) + 1),
                       "planned": "0 days",
                       "scheduled": "0 days",
                       "present_ingred": [...mealCon],
@@ -162,7 +161,6 @@ export default function Pantry() {
                   <img src="images/eat-later-button.png" />
                   <span onClick={() => {
                     setFutureMeals([...futureMeals, {
-                      "id": (futureMeals.length == 0) ? "1" : toString(parseInt(futureMeals[-1].id, 10) + 1),
                       "planned": "0 days",
                       "scheduled": "0 days",
                       "present_ingred": [...mealCon].filter((a) => (parseInt(a.quantity.slice(1, a.quantity.length), 10) !== 0)),
