@@ -1,16 +1,16 @@
 // Restaurant.jsx
-import { useContext } from "react";
 import MenuGroup from "./components/MenuGroup/MenuGroup";
 import "./Restaurant.css";
 import Header from "./components/Header/Header";
-// import placeholderImage from 'images/PlaceHolder.jpg';
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { SiteContext } from "../../Domain/SiteContext";
+import ConfirmItem from '../ConfirmItem/components/ConfirmItem/ConfirmItem';
 
 const Restaurant = () => {
   const [showTooltip, setShowTooltip] = useState(false);
   const [tooltipItem, setTooltipItem] = useState("");
   const { currentRestaurant,cart, setCart } = useContext(SiteContext);
+  const [selectedItem, setSelectedItem] = useState(null);
   let items = currentRestaurant.bags;
   let items2 = currentRestaurant.meals;
   const addToCart = (item) => {
@@ -27,6 +27,7 @@ const Restaurant = () => {
         return [...prevCart, { ...item, quantity: 1, restaurant: currentRestaurant.name }];
       }
     });
+    setSelectedItem(null);
     setShowTooltip(true);
     setTooltipItem(item.name);
     setTimeout(() => setShowTooltip(false), 3000);
@@ -37,38 +38,47 @@ const Restaurant = () => {
       (total, item) => total + item.quantity,
       0
     );
-    console.log(cart)
     localStorage.setItem("cart", JSON.stringify(cart));
-    window.location.href = "cart";
+    // window.location.href = "/cart";
   };
+
+  const handleBack = () => {
+    setSelectedItem(null)
+  }
 
   return (
     <div className="page">
-      <Header
+        {selectedItem ? (
+        <ConfirmItem selectedItem={selectedItem} onBack={handleBack} handleSubmit={addToCart} />
+      ) : (
+        <>
+          <Header
         name={currentRestaurant.name}
         totalQuantity={cart.reduce((total, item) => total + item.quantity, 0)}
         onCartClick={handleCartClick}
       />
-      {showTooltip && (
+          {showTooltip && (
         <div className="tooltip">
           1 {tooltipItem} has been added to the cart
         </div>
       )}
-      <div className="menu-group-container">
-        <MenuGroup
+          <div className="menu-group-container">
+            <MenuGroup
           groupName="Fresh Food Bags"
           items={items}
-          addToCart={addToCart}
+          addToCart={setSelectedItem}
         />
-      </div>
-      <div className="menu-group-container">
-        <MenuGroup
-          groupName="Looking for something else?"
-          groupText="Try one of these options!"
-          items={items2}
-          addToCart={addToCart}
-        />
-      </div>
+          </div>
+          <div className="menu-group-container">
+            <MenuGroup
+              groupName="Looking for something else?"
+              groupText="Try one of these options!"
+              items={items2}
+              addToCart={setSelectedItem}
+            />
+          </div>
+        </>
+      )}
     </div>
   );
 };

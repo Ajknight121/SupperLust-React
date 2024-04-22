@@ -1,0 +1,35 @@
+/* ItemConfirmation.css */
+.item-confirmation {
+    text-align: center;
+    padding: 20px;
+    background-color: #83abae;
+    position: relative;
+    color:black;
+  }
+  
+  .item-confirmation h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  .item-confirmation-header {
+    background-color: #83abae;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .item-confirmation-header h1 {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  .back-button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+  }

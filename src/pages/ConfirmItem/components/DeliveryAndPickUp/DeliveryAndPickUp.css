@@ -1,0 +1,57 @@
+/* ItemConfirmationDeliveryAndPickUp.css */
+.delivery-pickup-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .delivery-pickup-tabs button {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .delivery-pickup-tabs button.active {
+    background-color: #83abae;
+    color: #fff;
+  }
+  
+  .delivery-address {
+    margin-bottom: 20px;
+  }
+  
+  .delivery-address input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .delivery-address button {
+    background-color: #83abae;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .pickup-time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .pickup-time input {
+    width: 50px;
+    padding: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  
+  .pickup-time select {
+    padding: 10px;
+    font-size: 16px;
+  }

@@ -8,8 +8,9 @@ export default function ExploreResult( {restaurant} ) {
         <div>{name} ${price}</div>
         <div>{type} Distance: {distance} mi</div>
         <div className="images">
-          <img width={"90px"} height={"100%"} src={"images/Cheeseburger 1.png"}/>
-          <img width={"90px"} height={"100%"} src={"images/Cheeseburger 1.png"}/>
+          {restaurant.meals.map((item) => <img key={item.name+item.type} width={"90px"} height={"100%"} src={item.image}/>)}
+          {/* <img width={"90px"} height={"100%"} src={"images/Cheeseburger 1.png"}/>
+          <img width={"90px"} height={"100%"} src={"images/Cheeseburger 1.png"}/> */}
         </div>
     </div>
   )
