@@ -172,7 +172,8 @@ p.add-item {
 .pantry-item {
     width: 100px;
     height: 120px;
-    background-color: #edededc4
+    background-color: #edededc4;
+    color: black;
 }
 
 .pantry-item>p.above {
@@ -199,6 +200,7 @@ p.add-item {
     width: 100px;
     height: 90px;
     background-color: #edededc4;
+    color:black;
 }
 
 .timeline>.meal>img {
@@ -283,4 +285,8 @@ p.add-item {
     font-weight: 400;
     font-size: 16px;
     color: #000000;
+}
+
+.current-meal {
+    background-color: blue;
 }

@@ -128,48 +128,51 @@ export default function Pantry() {
             <HorizontalScroll id="alphabetical-hscroll" items={itemsAbc} urgent={false}
               setSelItem={setSelItem} setWhichPanel={setWhichPanel} />
             <img id="shelf-second" src="images/shelf-2.png" />
-            <h4>Your Meal</h4>
-            <HorizontalScroll id="current-meal-hscroll" items={mealCon} urgent={false}
-              setSelItem={setSelItem} setWhichPanel={setWhichPanel} />
-            <div className="lowermostNav">
-              <div className="shape-1" id="eat-now-bttn">
-                <img src="images/eat-now-button.png" />
-                <span onClick={() => {
-                  setPastMeals([...pastMeals, {
-                    "id": (pastMeals.length === 0) ? "1" : toString(parseInt(pastMeals[-1].id, 10) + 1),
-                    "planned": "0 days",
-                    "scheduled": "0 days",
-                    "present_ingred": [...mealCon],
-                    "missing_ingred": []
-                  }]);
-                  var newItemsExp = [...itemsExp];
-                  var newItemsAbc = [...itemsAbc];
-                  mealCon.forEach((a) => {
-                    newItemsExp = newItemsExp.filter((b) => (b.name !== a.name));
-                    newItemsAbc = newItemsAbc.filter((b) => (b.name !== a.name));
-                  });
-                  setItemsExp(newItemsExp);
-                  setItemsAbc(newItemsAbc);
-                  setMealCon([]);
+            <div className="current-meal">
 
-                }}>
-                  Eat Now
-                </span>
-              </div>
-              <div className="shape-1" id="eat-later-bttn">
-                <img src="images/eat-later-button.png" />
-                <span onClick={() => {
-                  setFutureMeals([...futureMeals, {
-                    "id": (futureMeals.length == 0) ? "1" : toString(parseInt(futureMeals[-1].id, 10) + 1),
-                    "planned": "0 days",
-                    "scheduled": "0 days",
-                    "present_ingred": [...mealCon].filter((a) => (parseInt(a.quantity.slice(1, a.quantity.length), 10) !== 0)),
-                    "missing_ingred": [...mealCon].filter((a) => (parseInt(a.quantity.slice(1, a.quantity.length), 10) === 0))
-                  }]);
-                  setMealCon([]);
-                }}>
-                  Eat Later
-                </span>
+              <h4>Your Meal</h4>
+              <HorizontalScroll id="current-meal-hscroll" items={mealCon} urgent={false}
+                setSelItem={setSelItem} setWhichPanel={setWhichPanel} />
+              <div className="lowermostNav">
+                <div className="shape-1" id="eat-now-bttn">
+                  <img src="images/eat-now-button.png" />
+                  <span onClick={() => {
+                    setPastMeals([...pastMeals, {
+                      "id": (pastMeals.length === 0) ? "1" : toString(parseInt(pastMeals[-1].id, 10) + 1),
+                      "planned": "0 days",
+                      "scheduled": "0 days",
+                      "present_ingred": [...mealCon],
+                      "missing_ingred": []
+                    }]);
+                    var newItemsExp = [...itemsExp];
+                    var newItemsAbc = [...itemsAbc];
+                    mealCon.forEach((a) => {
+                      newItemsExp = newItemsExp.filter((b) => (b.name !== a.name));
+                      newItemsAbc = newItemsAbc.filter((b) => (b.name !== a.name));
+                    });
+                    setItemsExp(newItemsExp);
+                    setItemsAbc(newItemsAbc);
+                    setMealCon([]);
+
+                  }}>
+                    Eat Now
+                  </span>
+                </div>
+                <div className="shape-1" id="eat-later-bttn">
+                  <img src="images/eat-later-button.png" />
+                  <span onClick={() => {
+                    setFutureMeals([...futureMeals, {
+                      "id": (futureMeals.length == 0) ? "1" : toString(parseInt(futureMeals[-1].id, 10) + 1),
+                      "planned": "0 days",
+                      "scheduled": "0 days",
+                      "present_ingred": [...mealCon].filter((a) => (parseInt(a.quantity.slice(1, a.quantity.length), 10) !== 0)),
+                      "missing_ingred": [...mealCon].filter((a) => (parseInt(a.quantity.slice(1, a.quantity.length), 10) === 0))
+                    }]);
+                    setMealCon([]);
+                  }}>
+                    Eat Later
+                  </span>
+                </div>
               </div>
             </div>
           </div>)}
