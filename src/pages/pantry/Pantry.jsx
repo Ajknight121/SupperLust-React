@@ -5,6 +5,8 @@ import items from "./item_data.json"
 import Timeline from "./components/Timeline";
 import ItemFocus from "./components/ItemFocus";
 import AddItemFocus from "./components/AddItemFocus";
+import PastMealFocus from "./components/PastMealFocus";
+import FutureMealFocus from "./components/FutureMealFocus";
 import { useState } from "react";
 
 export default function Pantry() {
@@ -33,7 +35,7 @@ export default function Pantry() {
 
   const [pastMeals, setPastMeals] = useState([{
     "id": "1",
-    "planned": "3 days",
+    "planned": "2 days",
     "scheduled": "2 days",
     "present_ingred": [{
       "lifespan": "9 days",
@@ -53,27 +55,32 @@ export default function Pantry() {
   }]);
   const [futureMeals, setFutureMeals] = useState([]);
 
-  const [whichPanel, setWhichPanel] = useState("existing_item")
+  const [whichPanel, setWhichPanel] = useState("")
   const [selItem, setSelItem] = useState(itemsAbc[0]);
+  const [selMeal, setSelMeal] = useState(pastMeals[0]);
   const [mealCon, setMealCon] = useState([]);
 
   return (
     <div className="page">
       {((whichPanel === "existing_item") ?
-        <ItemFocus item={selItem} itemType="not_created"
-          setWhichPanel={setWhichPanel} mealCon={mealCon} setMealCon={setMealCon}
+        <ItemFocus item={selItem} setWhichPanel={setWhichPanel}
+          mealCon={mealCon} setMealCon={setMealCon}
           itemsExp={itemsExp} setItemsExp={setItemsExp}
-          itemsAbc={itemsAbc} setItemsAbc={setItemsAbc} /> :
+          itemsAbc={itemsAbc} setItemsAbc={setItemsAbc}
+          futureMeals={futureMeals} setFutureMeals={setFutureMeals} /> :
         ((whichPanel === "add_item") ?
           <AddItemFocus setWhichPanel={setWhichPanel}
             itemsExp={itemsExp} setItemsExp={setItemsExp}
             itemsAbc={itemsAbc} setItemsAbc={setItemsAbc}
             sort_filter_by_expiry={sort_filter_by_expiry}
-            sort_abc={sort_abc} /> :
+            sort_abc={sort_abc} futureMeals={futureMeals}
+            setFutureMeals={setFutureMeals} /> :
           ((whichPanel === "past_meal") ?
-            "" :
+            <PastMealFocus meal={selMeal} setWhichPanel={setWhichPanel} /> :
             ((whichPanel === "future_meal") ?
-              "" : ""))))}
+              <FutureMealFocus meal={selMeal} setWhichPanel={setWhichPanel}
+                pastMeals={pastMeals} setPastMeals={setPastMeals}
+                futureMeals={futureMeals} setFutureMeals={setFutureMeals} /> : ""))))}
       <div className="uppermost-nav">
         <div className="shape-1" id="explore-bttn">
           <img src="images/explore-button.png" />
@@ -101,8 +108,10 @@ export default function Pantry() {
           <h4>Future</h4>
         </div>
         <div id="timelines">
-          <Timeline id="timeline-past" meals={pastMeals} past={true} />
-          <Timeline id="timeline-future" meals={futureMeals} past={false} />
+          <Timeline id="timeline-past" meals={pastMeals} past={true}
+            setWhichPanel={() => setWhichPanel("past_meal")} setSelMeal={setSelMeal} />
+          <Timeline id="timeline-future" meals={futureMeals} past={false}
+            setWhichPanel={() => setWhichPanel("future_meal")} setSelMeal={setSelMeal} />
         </div>
         <img id="shelf-first" src="images/shelf-1.png" />
         {mealCon.length === 0 ?
@@ -127,10 +136,10 @@ export default function Pantry() {
                 <img src="images/eat-now-button.png" />
                 <span onClick={() => {
                   setPastMeals([...pastMeals, {
-                    "id": toString(parseInt(pastMeals.slice(-1).id) + 1),
+                    "id": (pastMeals.length === 0) ? "1" : toString(parseInt(pastMeals[-1].id, 10) + 1),
                     "planned": "0 days",
                     "scheduled": "0 days",
-                    "present_ingred": mealCon,
+                    "present_ingred": [...mealCon],
                     "missing_ingred": []
                   }]);
                   var newItemsExp = [...itemsExp];
@@ -151,11 +160,11 @@ export default function Pantry() {
                 <img src="images/eat-later-button.png" />
                 <span onClick={() => {
                   setFutureMeals([...futureMeals, {
-                    "id": toString(parseInt(futureMeals.slice(-1).id) + 1),
+                    "id": (futureMeals.length == 0) ? "1" : toString(parseInt(futureMeals[-1].id, 10) + 1),
                     "planned": "0 days",
-                    "scheduled": "2 days",
-                    "present_ingred": mealCon.filter((a) => parseInt(a.quantity.slice(1, a.quantity.length) !== 0)),
-                    "missing_ingred": mealCon.filter((a) => parseInt(a.quantity.slice(1, a.quantity.length) === 0))
+                    "scheduled": "0 days",
+                    "present_ingred": [...mealCon].filter((a) => (parseInt(a.quantity.slice(1, a.quantity.length), 10) !== 0)),
+                    "missing_ingred": [...mealCon].filter((a) => (parseInt(a.quantity.slice(1, a.quantity.length), 10) === 0))
                   }]);
                   setMealCon([]);
                 }}>

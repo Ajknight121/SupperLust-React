@@ -2,7 +2,8 @@ import { useState } from "react";
 
 export default function AddItemFocus({
   setWhichPanel, itemsExp, setItemsExp, itemsAbc, setItemsAbc,
-  sort_filter_by_expiry, sort_abc }) {
+  sort_filter_by_expiry, sort_abc,
+  futureMeals, setFutureMeals }) {
   const [lifespan, setLifespan] = useState("");
   const [lifespanValidation, setLifespanValidation] = useState("");
   const [quantity, setQuantity] = useState("");
@@ -44,13 +45,11 @@ export default function AddItemFocus({
           <span>{typeValidation}</span><br />
           <button onClick={() => {
             var nameValidated = false;
-            if (name !== "" && (itemsAbc.length === itemsAbc.filter((a) => a.name !== name).length)) {
+            if (name !== "") {
               setNameValidation("");
               nameValidated = true;
-            } else if (name === "") {
-              setNameValidation("Name can't be empty")
             } else {
-              setNameValidation("A food with this exact name already exists in your pantry")
+              setNameValidation("Name can't be empty")
             }
             var lifespanValidated = false;
             if (!isNaN(lifespan) && parseInt(lifespan, 10) > 0) {
@@ -81,8 +80,16 @@ export default function AddItemFocus({
                 "imgFile": "images/PlaceHolder.jpg",
                 "type": type.trim()
               };
-              setItemsAbc(sort_abc([...itemsAbc, item]));
-              setItemsExp(sort_filter_by_expiry([...itemsExp, item]));
+              setItemsAbc(sort_abc([...itemsAbc.filter((a) => (a.name !== item.name)), item]));
+              setItemsExp(sort_filter_by_expiry([...itemsExp.filter((a) => (a.name !== item.name)), item]));
+              setFutureMeals(futureMeals.map((m) => {
+                let missing_ingred_filt = m.missing_ingred.filter((a) => (a.name !== item.name));
+                let was_missing = m.missing_ingred.length === missing_ingred_filt.length;
+                Object.assign(m, {
+                  "present_ingred": (was_missing ? [...m.present_ingred, item] : m.present_ingred),
+                  "missing_ingred": missing_ingred_filt
+                })
+              }))
               setWhichPanel("");
             }
           }}>Done</button>

@@ -1,36 +1,35 @@
+import HorizontalScroll from "./HorizScroll";
 
-export default function AddItemFocus({
-  item, itemType, setShowPanel, mealCon, setMealCon,
-  itemsExp, setItemsExp, itemsAbc, setItemsAbc }) {
-  const { lifespan, quantity, name, imgFile, type } = item;
+export default function FutureMealFocus({
+  meal, setWhichPanel, pastMeals, setPastMeals, futureMeals, setFutureMeals }) {
+  const { id, planned, scheduled, present_ingred, missing_ingred } = meal;
   return (
     <div className="panel">
-      <div className="exit" onClick={() => setShowPanel(false)}>
+      <div className="exit" onClick={() => setWhichPanel("")}>
         X
       </div>
       <div className="focus-header">
-        <div className="pantry-item"><img src={imgFile} /></div>
         <div className="focus-details">
           <h5>Future Meal</h5>
           <ul>
-            <li>{name}</li>
-            <li>Assembled: {lifespan} days ago</li>
-            {item.eaten ? <li>Eaten: {item.eatenAgo} Days ago</li> : <li>Scheduled for: {item.planDate}</li>}
+            <li>Assembled: {planned} ago</li>
           </ul>
         </div>
       </div>
-      <div className="Ingredients">
-        {item.ingredients.map((item) => <PantryItem key={item} />)}
-      </div>
-      <div className="options">
-        {item.eaten ? "" :
-          <Link to={"/"}>
-            <button className="add">
-              Mark as Complete
-            </button>
-          </Link>
-        }
-      </div>
-    </div>
-  )
+      <h4>Ingredients</h4>
+      <HorizontalScroll items={present_ingred} urgent={false}
+        setSelItem={() => { }} setWhichPanel={() => { }} />
+      <h4>Missing Items</h4>
+      <HorizontalScroll items={missing_ingred} urgent={false}
+        setSelItem={() => { }} setWhichPanel={() => { }} />
+      <button onClick={() => {
+        setFutureMeals(
+          [...futureMeals.filter((m) =>
+            (!(m.id === id && m.planned === planned && m.scheduled === scheduled)))]);
+        setPastMeals(
+          [...pastMeals, meal]
+        );
+        setWhichPanel("");
+      }}>Mark as Complete</button>
+    </div>)
 }
