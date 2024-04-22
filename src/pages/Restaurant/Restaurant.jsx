@@ -38,9 +38,8 @@ const Restaurant = () => {
       (total, item) => total + item.quantity,
       0
     );
-    console.log(cart)
     localStorage.setItem("cart", JSON.stringify(cart));
-    window.location.href = "cart";
+    window.location.href = "/cart";
   };
 
   const handleBack = () => {
