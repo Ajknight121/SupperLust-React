@@ -3,114 +3,133 @@
         "lifespan": "7 days",
         "quantity": "x6",
         "name": "Bananas",
-        "imgFile": "images/bananas-unfrozen.png"
+        "imgFile": "images/bananas-unfrozen.png",
+        "type": "Produce, Fruit"
     },
     {
         "lifespan": "5 days",
         "quantity": "x1",
         "name": "Feta",
-        "imgFile": "images/block-feta.png"
+        "imgFile": "images/block-feta.png",
+        "type": "Dairy"
     },
     {
         "lifespan": "5 days",
         "quantity": "x3",
         "name": "Bok Choy",
-        "imgFile": "images/bok-choy.png"
+        "imgFile": "images/bok-choy.png",
+        "type": "Produce, Vegetable"
     },
     {
         "lifespan": "180 days",
         "quantity": "x12",
         "name": "Chicken Buillon Cubes",
-        "imgFile": "images/buillion-chicken.png"
+        "imgFile": "images/buillion-chicken.png",
+        "type": "Seasoning"
     },
     {
         "lifespan": "90 days",
         "quantity": "x2",
         "name": "Butter (sticks)",
-        "imgFile": "images/butter.png"
+        "imgFile": "images/butter.png",
+        "type": "Dairy"
     },
     {
         "lifespan": "9 days",
         "quantity": "x8",
         "name": "Carrots (whole)",
-        "imgFile": "images/carrot.png"
+        "imgFile": "images/carrot.png",
+        "type": "Produce, Vegetable"
     },
     {
         "lifespan": "8 days",
         "quantity": "x4",
         "name": "Chicken (cooked)",
-        "imgFile": "images/cooked-chicken.png"
+        "imgFile": "images/cooked-chicken.png",
+        "type": "Animal Product, Meat"
     },
     {
         "lifespan": "360+ days",
         "quantity": "x20",
         "name": "Cumin (ground)",
-        "imgFile": "images/cumin-ground.png"
+        "imgFile": "images/cumin-ground.png",
+        "type": "Seasoning"
     },
     {
         "lifespan": "30 days",
         "quantity": "x1",
         "name": "Ranch dressing",
-        "imgFile": "images/dressing-ranch.png"
+        "imgFile": "images/dressing-ranch.png",
+        "type": "Dressing, Sauce"
     },
     {
         "lifespan": "14 days",
         "quantity": "x8",
         "name": "Eggs (uncooked)",
-        "imgFile": "images/eggs-uncooked.png"
+        "imgFile": "images/eggs-uncooked.png",
+        "type": "Animal Product, Egg"
     },
     {
         "lifespan": "180 days",
         "quantity": "x12",
         "name": "Frozen fruit",
-        "imgFile": "images/fruit-frozen.png"
+        "imgFile": "images/fruit-frozen.png",
+        "type": "Produce, Fruit"
     },
     {
         "lifespan": "11 days",
         "quantity": "x6",
         "name": "Garlic cloves",
-        "imgFile": "images/garlic-whole.png"
+        "imgFile": "images/garlic-whole.png",
+        "type": "Seasoning"
     },
     {
         "lifespan": "120 days",
         "quantity": "x10",
         "name": "Mayonaise",
-        "imgFile": "images/mayonaise.png"
+        "imgFile": "images/mayonaise.png",
+        "type": "Topping, Sauce"
     },
     {
         "lifespan": "360+ days",
         "quantity": "x1",
         "name": "Coconut milk (canned)",
-        "imgFile": "images/milk-coconut.png"
+        "imgFile": "images/milk-coconut.png",
+        "type": "Produce, Vegetable"
     },
     {
         "lifespan": "180+ days",
         "quantity": "x15",
         "name": "Miso paste",
-        "imgFile": "images/miso.png"
+        "imgFile": "images/miso.png",
+        "type": "Seasoning"
     },
     {
         "lifespan": "360+ days",
         "quantity": "x3",
         "name": "Noodles (instant)",
-        "imgFile": "images/noodle-instant.png"
+        "imgFile": "images/noodle-instant.png",
+        "type": "Starch, Noodle"
     },
     {
         "lifespan": "180+ days",
         "quantity": "x50",
         "name": "Olive Oil",
-        "imgFile": "images/oil-olive.png"
+        "imgFile": "images/oil-olive.png",
+        "type": "Fat, Oil"
     },
     {
         "lifespan": "180+ days",
         "quantity": "x75",
         "name": "Peanut oil",
-        "imgFile": "images/oil-peanut.png"
+        "imgFile": "images/oil-peanut.png",
+        "type": "Fat, Oil"
     },
     {
         "lifespan": "60 days",
         "quantity": "x20",
         "name": "Olives",
-        "imgFile": "images/olives.png"
+        "imgFile": "images/olives.png",
+        "type": "Preserve, Vegetable"
     }
 ]
