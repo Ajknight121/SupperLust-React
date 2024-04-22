@@ -104,15 +104,10 @@ export default function Pantry() {
       </div>
       <div className="lower">
         <div id="timelines-hdr">
-          <h4>Past</h4>
           <h4>Future</h4>
         </div>
-        <div id="timelines">
-          <Timeline id="timeline-past" meals={pastMeals} past={true}
-            setWhichPanel={() => setWhichPanel("past_meal")} setSelMeal={setSelMeal} />
-          <Timeline id="timeline-future" meals={futureMeals} past={false}
-            setWhichPanel={() => setWhichPanel("future_meal")} setSelMeal={setSelMeal} />
-        </div>
+        <Timeline id="timeline-future" meals={futureMeals} past={false}
+          setWhichPanel={() => setWhichPanel("future_meal")} setSelMeal={setSelMeal} />
         <img id="shelf-first" src="images/shelf-1.png" />
         {mealCon.length === 0 ?
           (<div className="rows">

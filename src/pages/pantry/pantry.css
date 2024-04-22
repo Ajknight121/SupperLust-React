@@ -220,7 +220,7 @@ p.add-item {
     flex-direction: row;
     overflow: scroll;
     column-gap: 15px;
-    flex-basis: 50%;
+    flex-basis: 100%;
     margin-right: 5px;
     margin-left: 5px;
 }
@@ -228,6 +228,7 @@ p.add-item {
 #timelines {
     display: flex;
     flex-direction: row;
+    height: 60px
 }
 
 #timelines-hdr {
