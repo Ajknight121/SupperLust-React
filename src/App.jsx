@@ -6,7 +6,6 @@ import QuickBites from './pages/quickbites/QuickBites'
 import Restaurant from './pages/Restaurant/Restaurant'
 import Cart from './pages/cart/Cart'
 import PanelPopup from './RatingPanel'
-import ItemFocus from './ItemFocus'
 function App() {
 
   return (
@@ -23,7 +22,6 @@ function App() {
           <Route path="/restaurant" element={<Restaurant />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/panel" element={<PanelPopup />} />
-          <Route path="/item" element={<ItemFocus item={{image: "images/PlaceHolder.jpg",name: "pear", purchaseDate: 3, type: "fruit"}}/>} />
         </Routes>
       </Router>
     </div>

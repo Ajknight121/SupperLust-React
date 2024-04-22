@@ -71,15 +71,15 @@ img.add-item {
     z-index: 30;
 }
 
-a.add-item {
+p.add-item {
     position: absolute;
     left: 40.5%;
-    top: 76.5px;
+    top: 62px;
     font-style: italic;
     font-weight: 900;
     font-size: 16px;
     color: #000000;
-    z-index: 30;
+    z-index: 40;
 }
 
 .uppermost-nav>span {

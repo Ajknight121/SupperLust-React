@@ -3,7 +3,8 @@ import "./pantry.css";
 import HorizontalScroll from './components/HorizScroll'
 import items from "./item_data.json"
 import Timeline from "./components/Timeline";
-import ItemFocus from "../../ItemFocus";
+import ItemFocus from "./components/ItemFocus";
+import AddItemFocus from "./components/AddItemFocus";
 import { useState } from "react";
 
 export default function Pantry() {
@@ -52,17 +53,27 @@ export default function Pantry() {
   }]);
   const [futureMeals, setFutureMeals] = useState([]);
 
-  const [showPanel, setShowPanel] = useState(false);
+  const [whichPanel, setWhichPanel] = useState("existing_item")
   const [selItem, setSelItem] = useState(itemsAbc[0]);
   const [mealCon, setMealCon] = useState([]);
 
   return (
     <div className="page">
-      {showPanel ?
+      {((whichPanel === "existing_item") ?
         <ItemFocus item={selItem} itemType="not_created"
-          setShowPanel={setShowPanel} mealCon={mealCon} setMealCon={setMealCon}
+          setWhichPanel={setWhichPanel} mealCon={mealCon} setMealCon={setMealCon}
           itemsExp={itemsExp} setItemsExp={setItemsExp}
-          itemsAbc={itemsAbc} setItemsAbc={setItemsAbc} /> : ""}
+          itemsAbc={itemsAbc} setItemsAbc={setItemsAbc} /> :
+        ((whichPanel === "add_item") ?
+          <AddItemFocus setWhichPanel={setWhichPanel}
+            itemsExp={itemsExp} setItemsExp={setItemsExp}
+            itemsAbc={itemsAbc} setItemsAbc={setItemsAbc}
+            sort_filter_by_expiry={sort_filter_by_expiry}
+            sort_abc={sort_abc} /> :
+          ((whichPanel === "past_meal") ?
+            "" :
+            ((whichPanel === "future_meal") ?
+              "" : ""))))}
       <div className="uppermost-nav">
         <div className="shape-1" id="explore-bttn">
           <img src="images/explore-button.png" />
@@ -78,9 +89,9 @@ export default function Pantry() {
         </div>
         <span>Pantry</span>
         <img className="add-item" src="images/solid-brown-ellipse-3.png" />
-        <Link className="add-item" to="/additem">
+        <p className="add-item" onClick={(event) => setWhichPanel("add_item")}>
           Add Item
-        </Link>
+        </p>
         <img id="bottom-oval" src="images/solid-brown-ellipse-1.png" />
         <img id="center-oval" src="images/solid-brown-shaded-ellipse-2.png" />
       </div>
@@ -98,19 +109,19 @@ export default function Pantry() {
           (<div className="rows">
             <h4>Expiring Soon!</h4>
             <HorizontalScroll id="expiring-soon-hscroll" items={itemsExp} urgent={true}
-              setSelItem={setSelItem} setShowPanel={setShowPanel} />
+              setSelItem={setSelItem} setWhichPanel={setWhichPanel} />
             <img id="shelf-second" src="images/shelf-2.png" />
             <h4>Alphabetical</h4>
             <HorizontalScroll id="alphabetical-hscroll" items={itemsAbc} urgent={false}
-              setSelItem={setSelItem} setShowPanel={setShowPanel} /></div>) :
+              setSelItem={setSelItem} setWhichPanel={setWhichPanel} /></div>) :
           (<div className="rows">
             <h4>Alphabetical</h4>
             <HorizontalScroll id="alphabetical-hscroll" items={itemsAbc} urgent={false}
-              setSelItem={setSelItem} setShowPanel={setShowPanel} />
+              setSelItem={setSelItem} setWhichPanel={setWhichPanel} />
             <img id="shelf-second" src="images/shelf-2.png" />
             <h4>Your Meal</h4>
             <HorizontalScroll id="current-meal-hscroll" items={mealCon} urgent={false}
-              setSelItem={setSelItem} setShowPanel={setShowPanel} />
+              setSelItem={setSelItem} setWhichPanel={setWhichPanel} />
             <div className="lowermostNav">
               <div className="shape-1" id="eat-now-bttn">
                 <img src="images/eat-now-button.png" />
@@ -151,7 +162,6 @@ export default function Pantry() {
                   Eat Later
                 </span>
               </div>
-
             </div>
           </div>)}
       </div>
