@@ -98,7 +98,7 @@ a.add-item {
     position: absolute;
     top: 0px;
     left: 0px;
-    width: 380px;
+    width: 100%;
     height: 18%;
 }
 
@@ -241,4 +241,46 @@ a.add-item {
     top: 0px;
     left: 0px;
     z-index: 50;
+}
+
+#eat-now-bttn {
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+}
+
+#eat-now-bttn>img {
+    width: 110px;
+    height: 62px;
+}
+
+#eat-now-bttn>span {
+    position: absolute;
+    bottom: 30px;
+    left: 26px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #000000;
+}
+
+#eat-later-bttn {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+}
+
+#eat-later-bttn>img {
+    width: 110px;
+    height: 62px;
+}
+
+#eat-later-bttn>span {
+    position: absolute;
+    bottom: 30px;
+    left: 26px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #000000;
 }
