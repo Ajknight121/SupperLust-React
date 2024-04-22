@@ -5,7 +5,7 @@ import { useContext, useState } from "react";
 import { SiteContext } from "../../Domain/SiteContext";
 const Explore = () => {
   let { restaurants, setCurrentRestaurant } = useContext(SiteContext);
-  const [travelTime, setTravelTime] = useState(30);
+  const [travelTime, setTravelTime] = useState(60);
   const [price, setPrice] = useState(100);
   const [portion, setPortion] = useState("Snacks");
 

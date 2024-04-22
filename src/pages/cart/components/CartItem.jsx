@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 
 
-export default function CartItem( {item} ) {
+export default function CartItem( {item, remove} ) {
     let {name, image, isDelivery = true, price, pickUpTime, restaurant} = item
   return (
     <div className="cart-item">
@@ -22,7 +22,7 @@ export default function CartItem( {item} ) {
       </div>
       <div className="cart-item-buttons">
         <button className="edit">Edit</button>
-        <button className="delete">Delete</button>
+        <button onClick={() => remove(item)} className="delete">Delete</button>
       </div>
     </div>
   );

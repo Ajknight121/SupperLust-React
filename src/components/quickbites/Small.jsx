@@ -1,14 +1,17 @@
 /* eslint-disable react/prop-types */
+import { useContext } from "react"
 import { Link } from "react-router-dom"
+import { SiteContext } from "../../Domain/SiteContext"
 // import dinnerPlate from "images/dinner-plate.png"
 
-const Small = ({name}) => {
+const Small = ({meal}) => {
+  const {addItemToCart} = useContext(SiteContext)
   return (
     <div className="small-item">
-      <Link to={"/cart"}>
-        <img src={"images/dinner-plate.png"} width={"50px"} height={"50px"} />
+      <Link to={"/cart"} onClick={() => addItemToCart(meal)}>
+        <img src={meal.image} width={"50px"} height={"50px"} />
         <div>
-            {name}
+            {meal.name}
         </div>
       </Link>
     </div>

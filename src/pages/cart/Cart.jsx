@@ -26,7 +26,7 @@ import { SiteContext } from "../../Domain/SiteContext"
 
 
 export default function Cart() {
-  const {cart, setCart, addMealToTimeline} = useContext(SiteContext)
+  const {cart, setCart, addMealToTimeline, removeItemFromCart} = useContext(SiteContext)
   let bags = cart.filter((item) => item.isBag == true);
   let meals = cart.filter((item) => item.isBag == false);
   console.log(cart)
@@ -37,11 +37,15 @@ export default function Cart() {
     })
     setCart([])
   }
+
+  const handleRemove = (item) => {
+    removeItemFromCart(item)
+  }
   return (
     <div className='cart'>
       <div className='header'>
         <div className="back">
-          <Link to={"/restaurant"}>
+          <Link onClick={() => history.back()}>
             <div className="back">&lt;</div>
           </Link>
         </div>
@@ -51,13 +55,13 @@ export default function Cart() {
         <div className='my-bags'>
           <h3>My Bags</h3>
           <div className='list'>
-            {bags.map((bag,index) => (<CartItem key={index + "cart"} item={bag}/>))}
+            {bags.map((bag,index) => (<CartItem key={index + "cart"} item={bag} remove={handleRemove}/>))}
           </div>
         </div>
         <div className='my-bags'>
           <h3>My Orders</h3>
           <div className='list'>
-          {meals.map((bag,index) => (<CartItem key={index + "cart"} item={bag}/>))}
+          {meals.map((bag,index) => (<CartItem key={index + "cart"} item={bag} remove={handleRemove}/>))}
           </div>
         </div>
       </div>
