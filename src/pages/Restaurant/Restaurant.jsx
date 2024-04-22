@@ -14,7 +14,6 @@ const Restaurant = () => {
   let items = currentRestaurant.bags;
   let items2 = currentRestaurant.meals;
   const addToCart = (item) => {
-    setSelectedItem(item);
     setCart((prevCart) => {
       const existingItem = prevCart.find((cartItem) => cartItem.id === item.id);
       if (existingItem) {
@@ -28,6 +27,7 @@ const Restaurant = () => {
         return [...prevCart, { ...item, quantity: 1, restaurant: currentRestaurant.name }];
       }
     });
+    setSelectedItem(null);
     setShowTooltip(true);
     setTooltipItem(item.name);
     setTimeout(() => setShowTooltip(false), 3000);
@@ -43,10 +43,14 @@ const Restaurant = () => {
     window.location.href = "cart";
   };
 
+  const handleBack = () => {
+    setSelectedItem(null)
+  }
+
   return (
     <div className="page">
         {selectedItem ? (
-        <ConfirmItem selectedItem={selectedItem} onBack={() => setSelectedItem(null)} />
+        <ConfirmItem selectedItem={selectedItem} onBack={handleBack} handleSubmit={addToCart} />
       ) : (
         <>
           <Header
@@ -63,7 +67,7 @@ const Restaurant = () => {
             <MenuGroup
           groupName="Fresh Food Bags"
           items={items}
-          addToCart={addToCart}
+          addToCart={setSelectedItem}
         />
           </div>
           <div className="menu-group-container">
@@ -71,7 +75,7 @@ const Restaurant = () => {
               groupName="Looking for something else?"
               groupText="Try one of these options!"
               items={items2}
-              addToCart={addToCart}
+              addToCart={setSelectedItem}
             />
           </div>
         </>

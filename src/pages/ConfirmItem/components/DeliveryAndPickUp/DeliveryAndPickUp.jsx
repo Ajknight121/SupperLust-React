@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-const DeliveryPickUp = () => {
+const DeliveryPickUp = ( {handleSubmit} ) => {
   const [activeTab, setActiveTab] = useState('delivery');
   const [deliveryAddress, setDeliveryAddress] = useState('');
   const [deliveryScheduled, setDeliveryScheduled] = useState(false);
@@ -233,7 +233,7 @@ const DeliveryPickUp = () => {
             </div>
           )}
         </div>
-        <button style={confirmButtonStyle}>Confirm Order</button>
+        <button onClick={handleSubmit} style={confirmButtonStyle}>Confirm Order</button>
       </div>
     </div>
   );

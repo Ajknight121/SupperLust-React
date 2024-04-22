@@ -14,6 +14,7 @@ export default function CartItem( {item, remove} ) {
           <div>
             <ul>
               <li>{isDelivery ? "Delivery" : "Pickup"}</li>
+              <li>Quantity: {item.quantity ? item.quantity : 1}</li>
               <li>{price}</li>
               <li>{pickUpTime}</li>
             </ul>

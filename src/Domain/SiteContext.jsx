@@ -43,6 +43,7 @@ export default function SiteContextProvider({ children }) {
   }
   function removeItemFromCart(meal) {
     setCart((prevCart) => prevCart.filter((item) => item !== meal));
+    localStorage.setItem("cart", cart.filter((item) => item !== meal))
   }
 
   function addMealToTimeline(meal, isFuture) {

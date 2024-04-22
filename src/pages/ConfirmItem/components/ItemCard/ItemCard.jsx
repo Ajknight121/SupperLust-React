@@ -24,7 +24,8 @@ const ItemCard = ({ item }) => {
       </div>
       <div className="item-details">
         <h3>{name}</h3>
-        <p>Rating: {renderStars()}</p>
+        <p>Rating: </p>
+        {renderStars()}
         <p>
           Price: <span className="price">{price}</span>
         </p>

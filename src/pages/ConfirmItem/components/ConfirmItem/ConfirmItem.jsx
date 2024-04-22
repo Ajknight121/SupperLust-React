@@ -1,35 +1,36 @@
 // ItemConfirmation.js
-import React, { useState } from 'react';
-import Header from '../Header/Header';
+import { useState } from 'react';
 import ItemGroup from '../ItemGroup/ItemGroup';
 import DeliveryPickUp from '../DeliveryAndPickUp/DeliveryAndPickUp';
 import './ConfirmItem.css';
 
 
-const ItemConfirmation = ({ selectedItem }) => {
+const ItemConfirmation = ({ selectedItem, onBack, handleSubmit }) => {
   const [deliveryOption, setDeliveryOption] = useState('pickup');
 
   const handleDeliveryOptionChange = (option) => {
     setDeliveryOption(option);
   };
 
-  const handleBackButtonClick = () => {
-    onBack();
-  };
 
-  const onBack = () => {
-    //Logic to go back to the menu
-
-    window.history.back();
+  const addItem = () => {
+    handleSubmit(selectedItem)
   }
 
   return (
     <div className="item-confirmation">
-      <Header onBack={handleBackButtonClick} />
+      <div className="item-confirmation-header">
+      <button className="back-button" onClick={() => onBack()}>
+        &lt; Back
+      </button>
+      <h1>Confirm Order</h1>
+      <div></div>
+    </div>
       <ItemGroup item={selectedItem} />
       <DeliveryPickUp
         deliveryOption={deliveryOption}
         onDeliveryOptionChange={handleDeliveryOptionChange}
+        handleSubmit={addItem}
       />
     </div>
   );
