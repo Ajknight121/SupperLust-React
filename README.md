@@ -25,3 +25,4 @@ When you're ready to run locally, execute
 ```
 and go to the locally-hosted webpage whose URL is displayed.
 
+The app may also be viewable at the public URL `supperlust.netlify.app`.  However, the version at this address is currently version B, and cannot be toggled to version A without permissions to modify the contents of the SupperLust-React git repository.
