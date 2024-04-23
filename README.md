@@ -2,7 +2,7 @@
 
 # Run web hosted project
   This project is currently hosted at: `https://supperlust.netlify.app`
-  However, the version at this address is currently version B, and cannot be toggled to version A without permissions to modify the contents of the SupperLust-React git repository.
+  However, the version at this address is currently version A, and cannot be toggled to version B without permissions to modify the contents of the SupperLust-React git repository.
 
 # Running the project Locally
 Within a terminal, enter the `SupperLust-React` directory.

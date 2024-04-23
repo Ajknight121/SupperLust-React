@@ -95,19 +95,26 @@ export default function Pantry() {
           </Link>
         </div>
         <span>Pantry</span>
-        <img className="add-item" src="images/solid-brown-ellipse-3.png" />
-        <p className="add-item" onClick={(event) => setWhichPanel("add_item")}>
-          Add Item
-        </p>
+        <div className="add-item" >
+          <img className="add-item-img" src="images/solid-brown-ellipse-3.png" />
+          <p className="add-item-text" onClick={(event) => setWhichPanel("add_item")}>
+            Add Item
+          </p>
+        </div>
         <img id="bottom-oval" src="images/solid-brown-ellipse-1.png" />
         <img id="center-oval" src="images/solid-brown-shaded-ellipse-2.png" />
       </div>
       <div className="lower">
         <div id="timelines-hdr">
+          <h4>Past</h4>
           <h4>Future</h4>
         </div>
-        <Timeline id="timeline-future" meals={futureMeals} past={false}
-          setWhichPanel={() => setWhichPanel("future_meal")} setSelMeal={setSelMeal} />
+        <div id="timelines">
+          <Timeline id="timeline-past" meals={pastMeals} past={true}
+            setWhichPanel={() => setWhichPanel("past_meal")} setSelMeal={setSelMeal} />
+          <Timeline id="timeline-future" meals={futureMeals} past={false}
+            setWhichPanel={() => setWhichPanel("future_meal")} setSelMeal={setSelMeal} />
+        </div>
         <img id="shelf-first" src="images/shelf-1.png" />
         {mealCon.length === 0 ?
           (<div className="rows">

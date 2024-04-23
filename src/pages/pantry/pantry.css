@@ -62,19 +62,27 @@
     z-index: 10;
 }
 
-img.add-item {
-    position: absolute;
+.add-item {
+    position: relative;
+    /* position: absolute; */
+    left: 50%;
+    top: 80px;
+    transform: translate(-50%, 0);
+    z-index: 30;
     width: 108px;
     height: 45px;
-    left: 36%;
-    top: 72px;
-    z-index: 30;
+}
+.add-item-img {
+    width: 100%;
 }
 
-p.add-item {
+.add-item-text {
     position: absolute;
-    left: 40.5%;
-    top: 62px;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    width: 100%;
     font-style: italic;
     font-weight: 900;
     font-size: 16px;
@@ -83,9 +91,14 @@ p.add-item {
 }
 
 .uppermost-nav>span {
+    /* position: relative; */
     position: absolute;
-    left: 39.3%;
+    left: 50%;
     top: 35px;
+    transform: translate(-50%, 0);
+    z-index: 30;
+    width: 108px;
+    height: 45px;
     font-style: italic;
     font-weight: 900;
     font-size: 24px;
@@ -159,7 +172,7 @@ p.add-item {
     position: absolute;
     z-index: 30;
     width: 100%;
-    margin-top: 30%;
+    margin-top: 120px;
     height: 85%;
 }
 
@@ -200,7 +213,7 @@ p.add-item {
     width: 100px;
     height: 90px;
     background-color: #edededc4;
-    color:black;
+    color: black;
 }
 
 .timeline>.meal>img {
@@ -220,7 +233,7 @@ p.add-item {
     flex-direction: row;
     overflow: scroll;
     column-gap: 15px;
-    flex-basis: 100%;
+    flex-basis: 50%;
     margin-right: 5px;
     margin-left: 5px;
 }
@@ -228,7 +241,6 @@ p.add-item {
 #timelines {
     display: flex;
     flex-direction: row;
-    height: 60px
 }
 
 #timelines-hdr {
