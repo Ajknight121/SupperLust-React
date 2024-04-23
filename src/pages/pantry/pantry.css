@@ -303,3 +303,7 @@
 .current-meal {
     background-color: blue;
 }
+
+.current-meal-label {
+    color: white;
+}

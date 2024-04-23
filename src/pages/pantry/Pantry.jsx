@@ -132,7 +132,7 @@ export default function Pantry() {
             <img id="shelf-second" src="images/shelf-2.png" />
             <div className="current-meal">
 
-              <h4>Your Meal</h4>
+              <h4 className="current-meal-label">Your Meal</h4>
               <HorizontalScroll id="current-meal-hscroll" items={mealCon} urgent={false}
                 setSelItem={setSelItem} setWhichPanel={setWhichPanel} />
               <div className="lowermostNav">

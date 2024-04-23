@@ -64,9 +64,11 @@ ul {
 }
 .edit {
     background-color: blue;
+    color: white;
 }
 .delete {
     background-color: red;
+    color: white;
 }
 
 .finalize {
