@@ -1,8 +1,16 @@
-# React + Vite
+# React + Vite Supperlust
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Run web hosted project
+  This project is currently hosted at: https://supperlust.netlify.app/
 
-Currently, two official plugins are available:
+# Running the project Locally
+  1. npm install
+  2. npm run dev
+  3. open localhost url in browser
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Design Deviations
+The map view was removed as its use was redundant when filtering resturants by travel time.
+The pantry view was implemented as best as possible
+Quick bites was changed to include the meal's name to the user to provide relevant information ealier. 
+The quick bites design was changed to better match explore view
+The cart page's edit and delete buttons were not shaped and rotated for simplicity for short implementation time. 
