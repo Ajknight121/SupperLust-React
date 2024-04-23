@@ -155,7 +155,7 @@ p.add-item {
 }
 
 .lower {
-    background-image: url("images/pantry-background.png");
+    background-image: url("../images/pantry-background.png");
     position: absolute;
     z-index: 30;
     width: 100%;
