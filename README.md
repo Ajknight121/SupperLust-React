@@ -1,9 +1,20 @@
 # React + Vite Supperlust
 
 # Run web hosted project
-  This project is currently hosted at: https://supperlust.netlify.app/
+  This project is currently hosted at: `https://supperlust.netlify.app`
+  However, the version at this address is currently version B, and cannot be toggled to version A without permissions to modify the contents of the SupperLust-React git repository.
 
 # Running the project Locally
+Within a terminal, enter the `SupperLust-React` directory.
+To access version A, do
+```
+  $ git checkout premain
+```
+
+To access version B, do 
+```
+  $ git checkout pantry_B
+```
   1. npm install
   2. npm run dev
   3. open localhost url in browser
